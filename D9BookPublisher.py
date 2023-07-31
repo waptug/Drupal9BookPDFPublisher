@@ -5,7 +5,9 @@ Date: July 31, 2023
 Version: V1.0
 License: GPL3
 
-This program fetches a main webpage and all linked pages from a given URL, converts them to PDF, and merges them into a single PDF file.
+This program fetches a main webpage from https://selwynpolit.github.io/d9book/ and all linked pages from the given URL, converts them to PDF, and merges them into a single PDF file.
+Orginal idea for the D9Book project goes out to https://selwynpolit.github.io/d9book/ and this program simply extends the benefits of a live Drupal resource.
+
 It uses several Python libraries to achieve this:
 
 1. requests: A popular Python library for making HTTP requests. It abstracts the complexities of making requests behind a beautiful, simple API.
