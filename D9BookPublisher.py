@@ -1,3 +1,35 @@
+"""
+Program Name: D9BookPDFPublisher
+Developer: Michael Scott McGinn
+Date: July 31, 2023
+Version: V1.0
+License: GPL3
+
+This program fetches a main webpage and all linked pages from a given URL, converts them to PDF, and merges them into a single PDF file.
+It uses several Python libraries to achieve this:
+
+1. requests: A popular Python library for making HTTP requests. It abstracts the complexities of making requests behind a beautiful, simple API.
+   Install it using pip: pip install requests
+
+2. BeautifulSoup: A Python library for parsing HTML and XML documents. It is often used for web scraping.
+   Install it using pip: pip install beautifulsoup4
+
+3. pdfkit: A Python wrapper for wkhtmltopdf, which allows HTML to PDF conversion using the webkit rendering engine and qt.
+   Install it using pip: pip install pdfkit
+   Note: You also need to install wkhtmltopdf in your system: https://wkhtmltopdf.org/downloads.html
+
+4. os: A built-in Python module that provides functions to interact with the operating system. No installation is needed.
+
+5. PyPDF2: A Python library to read/write and manipulate PDFs.
+   Install it using pip: pip install PyPDF2
+
+6. subprocess: A built-in Python module that allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes.
+
+7. urllib.parse: A built-in Python module for parsing URLs.
+
+8. logging: A built-in Python module for logging application events.
+"""
+
 import requests
 from bs4 import BeautifulSoup
 import pdfkit
@@ -132,15 +164,5 @@ logging.info(f"Writing the merged PDF to {os.path.join(output_dir, 'combined.pdf
 merger.write(os.path.join(output_dir, "combined.pdf"))
 merger.close()
 logging.info(f"Success. Wrote the merged PDF to {os.path.join(output_dir, 'combined.pdf')}.")
+
 print("Done.")
-# requests is a popular Python library for making HTTP requests. It abstracts the complexities of making requests behind a beautiful, simple API.
-# Install it using pip: pip install requests
-
-# BeautifulSoup is a Python library for parsing HTML and XML documents. It is often used for web scraping.
-# Install it using pip: pip install beautifulsoup4
-
-# pdfkit is a Python wrapper for wkhtmltopdf, which allows HTML to PDF conversion using the webkit rendering engine and qt.
-# Install it using pip: pip install pdfkit
-# Note: You also need to install wkhtmltopdf in your system: https://wkhtmltopdf.org/downloads.html
-
-# os is a built-in Python module that provides functions to interact with the operating system. No installation is needed
