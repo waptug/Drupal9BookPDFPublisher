@@ -21,6 +21,16 @@ If you find my python code helpful please join my repository and add to it.
 With a bit of tweeking my Python code would work on any site to create a 
 PDF version of it.
 
+### Requirements
+Here is how I have my dev machine set up
+
+WSL2
+Ubuntu
+DDEV
+Python 3
+
+A number of python librarys installed
+
 Michael Scott McGinn
 July 31, 2023
 
