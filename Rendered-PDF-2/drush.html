@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8"/><meta content="IE=Edge" http-equiv="X-UA-Compatible"/><link href="https://selwynpolit.github.io/d9book/assets/css/just-the-docs-default.css" rel="stylesheet"/> <script async="" src="https://www.googletagmanager.com/gtag/js?id=8V22RQEJ71"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '8V22RQEJ71', { 'anonymize_ip': true }); </script> <script src="https://selwynpolit.github.io/d9book/assets/js/vendor/lunr.min.js"></script> <script src="https://selwynpolit.github.io/d9book/assets/js/just-the-docs.js"></script><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://selwynpolit.github.io/d9book/assets/images/favicon.ico" rel="icon" type="image/x-icon"/><title>Drush | Drupal Book</title><meta content="Jekyll v4.3.2" name="generator"><meta content="Drush" property="og:title"><meta content="en_US" property="og:locale"><meta content="Drupal at your fingertips" name="description"/><meta content="Drupal at your fingertips" property="og:description"/><link href="https://selwynpolit.github.io/d9book/d9book/drush" rel="canonical"><meta content="https://selwynpolit.github.io/d9book/d9book/drush" property="og:url"/><meta content="Drupal Book" property="og:site_name"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><meta content="Drush" property="twitter:title"/> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","description":"Drupal at your fingertips","headline":"Drush","url":"https://selwynpolit.github.io/d9book/d9book/drush"}</script><body> <a class="skip-to-main" href="https://selwynpolit.github.io/d9book/drush#main-content">Skip to main content</a> <svg class="d-none" xmlns="http://www.w3.org/2000/svg"> <symbol id="svg-link" viewbox="0 0 24 24"><title>Link</title><svg class="feather feather-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-menu" viewbox="0 0 24 24"><title>Menu</title><svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewbox="0 0 24 24"><title>Expand</title><svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <symbol class="feather feather-external-link" fill="none" height="24" id="svg-external-link" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line> </symbol> <symbol id="svg-doc" viewbox="0 0 24 24"><title>Document</title><svg class="feather feather-file" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> <symbol id="svg-search" viewbox="0 0 24 24"><title>Search</title><svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line> </svg> </symbol> <symbol id="svg-copy" viewbox="0 0 16 16"><title>Copy</title><svg class="bi bi-clipboard" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path> </svg> </symbol> <symbol id="svg-copied" viewbox="0 0 16 16"><title>Copied</title><svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"></path><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"></path> </svg> </symbol> </svg><div class="side-bar"><div class="site-header"> <a class="site-title lh-tight" href="https://selwynpolit.github.io/d9book/"> Drupal Book </a> <a class="site-button" href="https://selwynpolit.github.io/d9book/drush" id="menu-button"> <svg class="icon" viewbox="0 0 24 24"><use xlink:href="#svg-menu"></use></svg> </a></div><nav aria-label="Main" class="site-nav" id="site-nav"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/">Home</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/actions">Actions</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/attribution">Attribution</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/bq">Batch and Queue</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/blocks">Blocks</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/caching">Caching</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/composer">Composer</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/config">Config</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/cron">Cron</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/dates">Dates and Times</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/debugging">Debugging</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/development">Development</a><li class="nav-list-item active"><a class="nav-list-link active" href="https://selwynpolit.github.io/d9book/drush">Drush</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/email">Email</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/entities">Entities</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/forms">Forms</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/general">General</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/off-island">Getting off the Island</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/hooks">Hooks</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/learn">Learning</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/links">Links</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/logging">Logging</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/menus">Menus</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/migrate">Migrate</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/modals">Modals</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/nodes-and-fields">Nodes and Fields</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/queries">Queries</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/redirects">Redirects</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/render">Render Arrays</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/routes">Routes</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/security">Security</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/services">Services</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/state">State</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/taxonomy">Taxonomy</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/dtt">Tests</a><li class="nav-list-item"><a class="nav-list-link" href="https://selwynpolit.github.io/d9book/twig">Twig</a></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></ul><ul class="nav-list"><li class="nav-list-item external"> <a class="nav-list-link external" href="https://github.com/selwynpolit/d9book/fork"> Fork me on GitHub <svg aria-labelledby="svg-external-link-title" viewbox="0 0 24 24"><use xlink:href="#svg-external-link"></use></svg> </a></li></ul></nav><footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer></div><div class="main" id="top"><div class="main-header" id="main-header"><div class="search"><div class="search-input-wrap"> <input aria-label="Search Drupal Book" autocomplete="off" class="search-input" id="search-input" placeholder="Search Drupal Book" tabindex="0" type="text"/> <label class="search-label" for="search-input"><svg class="search-icon" viewbox="0 0 24 24"><use xlink:href="#svg-search"></use></svg></label></div><div class="search-results" id="search-results"></div></div><nav aria-label="Auxiliary" class="aux-nav"><ul class="aux-nav-list"><li class="aux-nav-list-item"> <a class="site-button" href="https://twitter.com/selwynpolit" rel="noopener noreferrer" target="_blank"> <img alt="Twitter logo" src="https://atuin.ru/demo/simple-icons/icons/twitter.svg" style="width: 30px; height: 30px;" title="Author in Twitter"/> </a><li class="aux-nav-list-item"> <a class="site-button" href="https://github.com/selwynpolit/d9book/tree/gh-pages" rel="noopener noreferrer" target="_blank"> <img alt="GitHub logo" src="https://atuin.ru/demo/simple-icons/icons/github.svg" style="width: 30px; height: 30px;" title="D9Book on GitHub"/> </a></li></li></ul></nav></div><div class="main-content-wrap" id="main-content-wrap"><div class="main-content" id="main-content" role="main"><h1 class="no_toc fw-500" id="drush"> <a aria-labelledby="drush" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush</h1><h2 class="no_toc text-delta" id="table-of-contents"> <a aria-labelledby="table-of-contents" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#table-of-contents"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Table of contents</h2><ul id="markdown-toc"><li><a href="https://selwynpolit.github.io/d9book/drush#overview" id="markdown-toc-overview">Overview</a><li><a href="https://selwynpolit.github.io/d9book/drush#drush-commands" id="markdown-toc-drush-commands">Drush commands</a><ul><li><a href="https://selwynpolit.github.io/d9book/drush#generate-commands" id="markdown-toc-generate-commands">Generate commands</a><li><a href="https://selwynpolit.github.io/d9book/drush#drush-command-example" id="markdown-toc-drush-command-example">Drush command Example</a><li><a href="https://selwynpolit.github.io/d9book/drush#drush-commands-and--parameters" id="markdown-toc-drush-commands-and--parameters">Drush commands and parameters</a><li><a href="https://selwynpolit.github.io/d9book/drush#output-messages-on-screen" id="markdown-toc-output-messages-on-screen">Output messages on screen</a></li></li></li></li></ul><li><a href="https://selwynpolit.github.io/d9book/drush#drush-scripts" id="markdown-toc-drush-scripts">Drush Scripts</a><ul><li><a href="https://selwynpolit.github.io/d9book/drush#run-your-scripts" id="markdown-toc-run-your-scripts">Run your scripts</a><li><a href="https://selwynpolit.github.io/d9book/drush#arguments-example" id="markdown-toc-arguments-example">Arguments example</a><li><a href="https://selwynpolit.github.io/d9book/drush#arguments-example2" id="markdown-toc-arguments-example2">Arguments example2</a><li><a href="https://selwynpolit.github.io/d9book/drush#hello-world-example" id="markdown-toc-hello-world-example">Hello world example</a><li><a href="https://selwynpolit.github.io/d9book/drush#database-query-example" id="markdown-toc-database-query-example">Database query example</a><li><a href="https://selwynpolit.github.io/d9book/drush#entityquery-example" id="markdown-toc-entityquery-example">entityQuery example</a></li></li></li></li></li></li></ul><li><a href="https://selwynpolit.github.io/d9book/drush#drush-does-that" id="markdown-toc-drush-does-that">Drush does that?</a><ul><li><a href="https://selwynpolit.github.io/d9book/drush#list-blocks" id="markdown-toc-list-blocks">List blocks</a><li><a href="https://selwynpolit.github.io/d9book/drush#generate-code" id="markdown-toc-generate-code">Generate code</a><li><a href="https://selwynpolit.github.io/d9book/drush#sanitize-databases" id="markdown-toc-sanitize-databases">Sanitize Databases</a><li><a href="https://selwynpolit.github.io/d9book/drush#delete-nodes" id="markdown-toc-delete-nodes">Delete nodes</a><li><a href="https://selwynpolit.github.io/d9book/drush#delete-redirects" id="markdown-toc-delete-redirects">Delete redirects</a><li><a href="https://selwynpolit.github.io/d9book/drush#watch-the-watchdog-log" id="markdown-toc-watch-the-watchdog-log">Watch the watchdog log</a><li><a href="https://selwynpolit.github.io/d9book/drush#read-drupal-config" id="markdown-toc-read-drupal-config">Read Drupal config</a><li><a href="https://selwynpolit.github.io/d9book/drush#check-if-current-config-matches-exported-config" id="markdown-toc-check-if-current-config-matches-exported-config">Check if current config matches exported config</a><li><a href="https://selwynpolit.github.io/d9book/drush#user-login" id="markdown-toc-user-login">User Login</a><li><a href="https://selwynpolit.github.io/d9book/drush#drupaldirectory" id="markdown-toc-drupaldirectory">Drupal:directory</a></li></li></li></li></li></li></li></li></li></li></ul><li><a href="https://selwynpolit.github.io/d9book/drush#global-install" id="markdown-toc-global-install">Global Install</a><li><a href="https://selwynpolit.github.io/d9book/drush#drush-aliases" id="markdown-toc-drush-aliases">Drush aliases</a><ul><li><a href="https://selwynpolit.github.io/d9book/drush#example-drush-alias-file" id="markdown-toc-example-drush-alias-file">Example Drush alias file</a><li><a href="https://selwynpolit.github.io/d9book/drush#example-acquia-drush-alias-files" id="markdown-toc-example-acquia-drush-alias-files">Example Acquia Drush alias files</a><li><a href="https://selwynpolit.github.io/d9book/drush#example-drush-alias-file-from-drush-project" id="markdown-toc-example-drush-alias-file-from-drush-project">Example Drush alias file from Drush project</a></li></li></li></ul><li><a href="https://selwynpolit.github.io/d9book/drush#drush-rsync" id="markdown-toc-drush-rsync">Drush rsync</a><li><a href="https://selwynpolit.github.io/d9book/drush#drush-sql-sync" id="markdown-toc-drush-sql-sync">Drush SQL-sync</a><ul><li><a href="https://selwynpolit.github.io/d9book/drush#sql-queries" id="markdown-toc-sql-queries">SQL Queries</a></li></ul><li><a href="https://selwynpolit.github.io/d9book/drush#drush-launcher" id="markdown-toc-drush-launcher">Drush launcher</a><li><a href="https://selwynpolit.github.io/d9book/drush#drupal-7-drush-scripts" id="markdown-toc-drupal-7-drush-scripts">Drupal 7 Drush scripts</a><li><a href="https://selwynpolit.github.io/d9book/drush#resources" id="markdown-toc-resources">Resources</a></li></li></li></li></li></li></li></li></li></li></li></ul><p><img alt="views" src="https://api.visitor.plantree.me/visitor-badge/pv?label=views&amp;color=informational&amp;namespace=d9book&amp;key=drush.md"/></p><hr/><h2 id="overview"> <a aria-labelledby="overview" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#overview"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Overview</h2><p>Drush is a command line shell and Unix scripting interface for Drupal. Your life will go much better if you use Drush! Drush core ships with lots of <a href="https://www.drush.org/latest/commands/all/">useful commands</a> and <a href="https://www.drush.org/latest/generators/all/">generators</a>. Similarly, it runs update.php, executes SQL queries, runs content migrations, and miscellaneous utilities like cron or cache rebuild. Drush can be extended by <a href="https://www.drupal.org/project/project_module?f%5b2%5d=im_vid_3%3A4654">3rd party commandfiles</a>.</p><p>From <a href="https://www.drush.org/latest/">https://www.drush.org/latest/</a></p><p>Drush is extensible with the ability to create drush commands and drush scripts.</p><h2 id="drush-commands"> <a aria-labelledby="drush-commands" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-commands"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush commands</h2><p>These are new commands that you can add to your modules to allow drush to do useful things. Modules sometimes include drush commands e.g. search api (<a href="https://www.drupal.org/project/search_api">https://www.drupal.org/project/search_api</a>) More about this below.</p><p>Modules that have drush 9 commands need the following</p><ol><li><p>drush.services.yml</p><li><p>The implementation class which extends the DrushCommands class in module/src/Commands.</p><li><p>In the class, you annotate the function with the command</p><li><p>A section in the composer.json file referencing the extra, drush, services.</p></li></li></li></li></ol><p>See below for examples of each.</p><h3 id="generate-commands"> <a aria-labelledby="generate-commands" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#generate-commands"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Generate commands</h3><p>Drush can generate all the files to create a new command. Use:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>drush generate drush-command-file
+</code></pre></div></div><p>Or <code class="language-plaintext highlighter-rouge">drush dcf</code></p><h3 id="drush-command-example"> <a aria-labelledby="drush-command-example" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-command-example"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush command Example</h3><p>The (Search API module)[https://www.drupal.org/project/search_api] has a set of Drush commands.</p><p>Here is <code class="language-plaintext highlighter-rouge">web/modules/contrib/search_api/drush.services.yml</code></p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">search_api.commands</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">Drupal\search_api\Commands\SearchApiCommands</span>
+    <span class="na">arguments</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">@entity_type.manager'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">@module_handler'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">@event_dispatcher'</span><span class="pi">]</span>
+    <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">drush.command</span> <span class="pi">}</span>
+</code></pre></div></div><p>Here is the beginning of the <code class="language-plaintext highlighter-rouge">web/modules/contrib/search_api/src/Commands/SearchApiCommands.php</code> which includes the class <code class="language-plaintext highlighter-rouge">SearchApiCommands</code> which extends the <code class="language-plaintext highlighter-rouge">DrushCommands</code> class:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">Drupal\search_api\Commands</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Consolidation\OutputFormatters\StructuredData\RowsOfFields</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Drupal\Core\Entity\EntityTypeManagerInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Drupal\Core\Extension\ModuleHandlerInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nf">Drupal\search_api</span><span class="nc">\Contrib\RowsOfMultiValueFields</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nf">Drupal\search_api</span><span class="nc">\Utility\CommandHelper</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Drush\Commands\DrushCommands</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Psr\Log\LoggerInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Contracts\EventDispatcher\EventDispatcherInterface</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Defines Drush commands for the Search API.
+ */</span>
+<span class="kd">class</span> <span class="nc">SearchApiCommands</span> <span class="kd">extends</span> <span class="nc">DrushCommands</span> <span class="p">{</span>
+
+  <span class="cd">/**
+   * The command helper.
+   *
+   * @var \Drupal\search_api\Utility\CommandHelper
+   */</span>
+  <span class="k">protected</span> <span class="nv">$commandHelper</span><span class="p">;</span>
+
+  <span class="cd">/**
+   * Constructs a SearchApiCommands object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   The entity type manager.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
+   *   The module handler.
+   * @param \Symfony\Contracts\EventDispatcher\EventDispatcherInterface $eventDispatcher
+   *   The event dispatcher.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   *   Thrown if the "search_api_index" or "search_api_server" entity types'
+   *   storage handlers couldn't be loaded.
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   *   Thrown if the "search_api_index" or "search_api_server" entity types are
+   *   unknown.
+   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">EntityTypeManagerInterface</span> <span class="nv">$entityTypeManager</span><span class="p">,</span> <span class="kt">ModuleHandlerInterface</span> <span class="nv">$moduleHandler</span><span class="p">,</span> <span class="kt">EventDispatcherInterface</span> <span class="nv">$eventDispatcher</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">();</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CommandHelper</span><span class="p">(</span><span class="nv">$entityTypeManager</span><span class="p">,</span> <span class="nv">$moduleHandler</span><span class="p">,</span> <span class="nv">$eventDispatcher</span><span class="p">,</span> <span class="s1">'dt'</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div><p>Here is an example command (<code class="language-plaintext highlighter-rouge">search_api:enable</code>) from Search_API. This is an excerpt from <code class="language-plaintext highlighter-rouge">web/modules/contrib/search_api/src/Commands/SearchApiCommands.php</code>. Looking at the annotation you can see all the details of the command as well as the aliases. This annotation provides the ability to issue the command <code class="language-plaintext highlighter-rouge">drush search_api:enable</code>. The aliases allow you to use <code class="language-plaintext highlighter-rouge">drush sapi-en</code> or <code class="language-plaintext highlighter-rouge">drush search-api-enable</code> as well. Note. You can always add aliases etc. like <code class="language-plaintext highlighter-rouge">drush @apc.dev sapi-en</code>.</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
+ * Enables one disabled search index.
+ *
+ * @param string $indexId
+ *   A search index ID.
+ *
+ * @throws \Drupal\search_api\ConsoleException
+ *   Thrown if no indexes could be loaded.
+ *
+ * @command search-api:enable
+ *
+ * @usage drush search-api:enable node_index
+ *   Enable the search index with the ID node_index.
+ *
+ * @aliases sapi-en,search-api-enable
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">enable</span><span class="p">(</span><span class="nv">$indexId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandHelper</span><span class="o">-&gt;</span><span class="nf">enableIndexCommand</span><span class="p">([</span><span class="nv">$indexId</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div><p>You also need a <code class="language-plaintext highlighter-rouge">composer.json</code> in the custom module directory. Note the <code class="language-plaintext highlighter-rouge">extra, drush, services</code> that reference the <code class="language-plaintext highlighter-rouge">drush.services.yml</code> file:</p><p>Here is the version that drush generates by default:</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">{</span>
+    <span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">org/tea_vote_cache"</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">type"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">drupal-drush"</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">extra"</span><span class="pi">:</span> <span class="pi">{</span>
+        <span class="s2">"</span><span class="s">drush"</span><span class="pi">:</span> <span class="pi">{</span>
+            <span class="s2">"</span><span class="s">services"</span><span class="pi">:</span> <span class="pi">{</span>
+                <span class="s2">"</span><span class="s">drush.services.yml"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^10"</span>
+            <span class="pi">}</span>
+        <span class="pi">}</span>
+    <span class="pi">}</span>
+<span class="pi">}</span>
+</code></pre></div></div><p>Here is the composer.json from a project where I used (Search API module)[https://www.drupal.org/project/search_api] module at web/modules/contrib/search_api/composer.json:</p><div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">{</span>
+  <span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">drupal/search_api"</span><span class="pi">,</span>
+  <span class="s2">"</span><span class="s">description"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Provides</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">generic</span><span class="nv"> </span><span class="s">framework</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">modules</span><span class="nv"> </span><span class="s">offering</span><span class="nv"> </span><span class="s">search</span><span class="nv"> </span><span class="s">capabilities."</span><span class="pi">,</span>
+  <span class="s2">"</span><span class="s">type"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">drupal-module"</span><span class="pi">,</span>
+  <span class="s2">"</span><span class="s">homepage"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.drupal.org/project/search_api"</span><span class="pi">,</span>
+  <span class="s2">"</span><span class="s">authors"</span><span class="pi">:</span> <span class="pi">[</span>
+    <span class="pi">{</span>
+      <span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Thomas</span><span class="nv"> </span><span class="s">Seidl"</span><span class="pi">,</span>
+      <span class="s2">"</span><span class="s">homepage"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.drupal.org/u/drunken-monkey"</span>
+    <span class="pi">},</span>
+    <span class="pi">{</span>
+      <span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Nick</span><span class="nv"> </span><span class="s">Veenhof"</span><span class="pi">,</span>
+      <span class="s2">"</span><span class="s">homepage"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.drupal.org/u/nick_vh"</span>
+    <span class="pi">},</span>
+    <span class="pi">{</span>
+      <span class="s2">"</span><span class="s">name"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">See</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">contributors"</span><span class="pi">,</span>
+      <span class="s2">"</span><span class="s">homepage"</span><span class="pi">:</span><span class="s2">"</span><span class="s">https://www.drupal.org/node/790418/committers"</span>
+    <span class="pi">}</span>
+  <span class="pi">],</span>
+  <span class="s2">"</span><span class="s">support"</span><span class="pi">:</span> <span class="pi">{</span>
+    <span class="s2">"</span><span class="s">issues"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.drupal.org/project/issues/search_api"</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">irc"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">irc://irc.freenode.org/drupal-search-api"</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">source"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://git.drupalcode.org/project/search_api"</span>
+  <span class="pi">},</span>
+  <span class="s2">"</span><span class="s">license"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GPL-2.0-or-later"</span><span class="pi">,</span>
+  <span class="s2">"</span><span class="s">require-dev"</span><span class="pi">:</span> <span class="pi">{</span>
+    <span class="s2">"</span><span class="s">drupal/language_fallback_fix"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">@dev"</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">drupal/search_api_autocomplete"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">@dev"</span>
+  <span class="pi">},</span>
+  <span class="s2">"</span><span class="s">suggest"</span><span class="pi">:</span> <span class="pi">{</span>
+    <span class="s2">"</span><span class="s">drupal/facets"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Adds</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">ability</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">create</span><span class="nv"> </span><span class="s">faceted</span><span class="nv"> </span><span class="s">searches."</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">drupal/search_api_autocomplete"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Allows</span><span class="nv"> </span><span class="s">adding</span><span class="nv"> </span><span class="s">autocomplete</span><span class="nv"> </span><span class="s">suggestions</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">search</span><span class="nv"> </span><span class="s">fields."</span><span class="pi">,</span>
+    <span class="s2">"</span><span class="s">drupal/search_api_solr"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Adds</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">using</span><span class="nv"> </span><span class="s">Apache</span><span class="nv"> </span><span class="s">Solr</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">backend."</span>
+  <span class="pi">},</span>
+  <span class="s2">"</span><span class="s">extra"</span><span class="pi">:</span> <span class="pi">{</span>
+    <span class="s2">"</span><span class="s">drush"</span><span class="pi">:</span> <span class="pi">{</span>
+      <span class="s2">"</span><span class="s">services"</span><span class="pi">:</span> <span class="pi">{</span>
+        <span class="s2">"</span><span class="s">drush.services.yml"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^9</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">^10"</span>
+      <span class="pi">}</span>
+    <span class="pi">}</span>
+  <span class="pi">},</span>
+  <span class="s2">"</span><span class="s">conflict"</span><span class="pi">:</span> <span class="pi">{</span>
+    <span class="s2">"</span><span class="s">drupal/search_api_solr"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2.*</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">3.0</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">3.1"</span>
+  <span class="pi">}</span>
+<span class="pi">}</span>
+</code></pre></div></div><h3 id="drush-commands-and--parameters"> <a aria-labelledby="drush-commands-and--parameters" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-commands-and--parameters"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush commands and parameters</h3><p>You can specify the commands with a member function and all its parameters like this:</p><p>Here we have a command</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="n">commandWarmVotingCache</span><span class="p">(</span><span class="nv">$scope</span> <span class="o">=</span> <span class="s1">'current'</span><span class="p">,</span> <span class="nv">$program_nid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'option-name'</span> <span class="o">=&gt;</span> <span class="s1">'default'</span><span class="p">]):</span> <span class="kt">int</span> <span class="p">{</span>
+</code></pre></div></div><p>This expects a command like: <code class="language-plaintext highlighter-rouge">drush cwarm current 12345</code></p><p class="note">The $options parameter is not generally for you to use. Drush uses it for all sorts of parameters internally. It is interesting to look at the values in the debugger.</p><h3 id="output-messages-on-screen"> <a aria-labelledby="output-messages-on-screen" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#output-messages-on-screen"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Output messages on screen</h3><p>Here we use <code class="language-plaintext highlighter-rouge">print</code>:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$program_title</span> <span class="o">=</span> <span class="nv">$program_node</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">();</span>
+  <span class="k">print</span> <span class="s2">"Warming cache for program_nid: </span><span class="nv">$program_nid</span><span class="s2"> Title: </span><span class="nv">$program_title</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="nv">$progress</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Progress</span><span class="p">(</span><span class="nv">$program_nid</span><span class="p">);</span>
+  <span class="nv">$max_vote_number</span> <span class="o">=</span> <span class="nv">$program_node</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'field_srp_vote_number'</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nv">$vote_number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$vote_number</span> <span class="o">&lt;=</span> <span class="nv">$max_vote_number</span><span class="p">;</span> <span class="nv">$vote_number</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$progress</span><span class="o">-&gt;</span><span class="nf">getTeamKssCompletionStatus</span><span class="p">(</span><span class="nv">$vote_number</span><span class="p">);</span>
+    <span class="k">print</span> <span class="s2">"vote_number: </span><span class="nv">$vote_number</span><span class="s2">, Team KSS completion status: </span><span class="nv">$status</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div><p>You can use the Drupal logger to output data to the terminal. If you specify <code class="language-plaintext highlighter-rouge">-&gt;info</code> instead of <code class="language-plaintext highlighter-rouge">-&gt;notice</code> below you will only see the output in the terminal if you add -vvv to the drush command i.e. <code class="language-plaintext highlighter-rouge">drush cwarm current -vvv</code></p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">\Drupal</span><span class="o">::</span><span class="nf">logger</span><span class="p">(</span><span class="s1">'tea_teks_voting'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">notice</span><span class="p">(</span><span class="s2">"Drush cache warm requested. Scope: </span><span class="nv">$scope</span><span class="s2">, Program_nid = </span><span class="nv">$program_nid</span><span class="s2">"</span><span class="p">);</span>
+</code></pre></div></div><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">(</span><span class="nv">$rc</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">logger</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">success</span><span class="p">(</span><span class="nf">dt</span><span class="p">(</span><span class="s1">'Operation completed.'</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">logger</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">error</span><span class="p">(</span><span class="nf">dt</span><span class="p">(</span><span class="s1">'Failed to complete processing.'</span><span class="p">));</span>
+  <span class="p">}</span>
+</code></pre></div></div><h2 id="drush-scripts"> <a aria-labelledby="drush-scripts" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-scripts"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush Scripts</h2><p>These are PHP Scripts that run after a full Drupal bootstrap. From <a href="https://www.drush.org/latest/commands/php_script/#options">https://www.drush.org/latest/commands/php_script/#options</a> : A useful alternative to eval command when your php is lengthy or you can't be bothered to figure out bash quoting. If you plan to share a script with others, consider making a full Drush command instead, since that's more self-documenting. Drush provides command line options to the script via a variable called <code class="language-plaintext highlighter-rouge">$extra</code>.</p><p>You can execute these scripts with <code class="language-plaintext highlighter-rouge">drush scr script</code> (where script is the filename of the script to execute.). If you put the script in the <code class="language-plaintext highlighter-rouge">docroot</code> (or <code class="language-plaintext highlighter-rouge">web</code>) directory, you don't need to specify a path.</p><p><strong>TL;DR</strong></p><ol><li><p>Put script file in docroot (No need to make it executable.)</p><li><p>Requires opening <code class="language-plaintext highlighter-rouge">&lt;?php</code> tag</p><li><p>Execute with <code class="language-plaintext highlighter-rouge">drush scr scriptname arg1 arg2</code></p><li><p>Arguments show up in the <code class="language-plaintext highlighter-rouge">$extra array</code> i.e. <code class="language-plaintext highlighter-rouge">$extra[0]...</code></p><li><p>Print with <code class="language-plaintext highlighter-rouge">$this-&gt;output()-&gt;writeln</code>, <code class="language-plaintext highlighter-rouge">print "\n"</code> or <code class="language-plaintext highlighter-rouge">echo "\n"</code></p></li></li></li></li></li></ol><h3 id="run-your-scripts"> <a aria-labelledby="run-your-scripts" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#run-your-scripts"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Run your scripts</h3><p>e.g. to execute example.drush</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ddev drush php:script example.drush
+</code></pre></div></div><p>I prefer the alias</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ddev</span> drush scr example.drush
+</code></pre></div></div><p>If you want to ssh into the DDEV container, you can use:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ddev ssh
+
+<span class="nv">$ </span>drush scr example.drush
+</code></pre></div></div><p>If you have drush installed globally, you can also run it from the host with:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>drush scr example.drush
+</code></pre></div></div><h3 id="arguments-example"> <a aria-labelledby="arguments-example" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#arguments-example"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Arguments example</h3><p>Here is a simple example <code class="language-plaintext highlighter-rouge">example2.drush</code> showing arguments:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Drush\Drush</span><span class="p">;</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">);</span>
+<span class="c1">// $extra is an array if you issue arguments e.g.</span>
+<span class="c1">// drush scr example2.drush abc def</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"The extra options/arguments to this command were:"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$extra</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+</code></pre></div></div><p>Here is the script being run via ddev and showing its output:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ddev drush scr example2.drush abc def
+Hello world!
+The extra options/arguments to this <span class="nb">command </span>were:
+Array
+<span class="o">(</span>
+    <span class="o">[</span>0] <span class="o">=&gt;</span> abc
+    <span class="o">[</span>1] <span class="o">=&gt;</span> def
+<span class="o">)</span>
+</code></pre></div></div><h3 id="arguments-example2"> <a aria-labelledby="arguments-example2" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#arguments-example2"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Arguments example2</h3><p>Here is <code class="language-plaintext highlighter-rouge">opinion_renamer.php</code> script that expects a parameter and dies if it doesn’t find it. Also if the second parameter is R, it reports that it is reverting titles.</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s2">"usage: drush scr test1 &lt;acg term id&gt; &lt;R&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">"e.g. 976 is the termid for John Smith.</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+
+
+<span class="nv">$acg</span> <span class="o">=</span> <span class="nv">$extra</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$acg</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="s2">"no acg termid"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$undo</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$extra</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+  <span class="nv">$revert</span> <span class="o">=</span> <span class="nv">$extra</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$revert</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"R"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$undo</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"reverting titles for acg </span><span class="nv">$acg</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><h3 id="hello-world-example"> <a aria-labelledby="hello-world-example" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#hello-world-example"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Hello world example</h3><p>Here is an example of a script from <a href="https://raw.githubusercontent.com/drush-ops/drush/11.x/examples/helloworld.script">https://raw.githubusercontent.com/drush-ops/drush/11.x/examples/helloworld.script</a>:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="c1">//</span>
+<span class="c1">// This example demonstrates how to write a drush</span>
+<span class="c1">// script. These scripts are run with the php:script command.</span>
+<span class="c1">//</span>
+<span class="kn">use</span> <span class="nc">Drush\Drush</span><span class="p">;</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"The extra options/arguments to this command were:"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$extra</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+
+<span class="c1">//</span>
+<span class="c1">// We can check which site was bootstrapped via</span>
+<span class="c1">// the '@self' alias, which is defined only if</span>
+<span class="c1">// there is a bootstrapped site.</span>
+<span class="c1">//</span>
+<span class="nv">$self</span> <span class="o">=</span> <span class="nc">Drush</span><span class="o">::</span><span class="nf">aliasManager</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getSelf</span><span class="p">();;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$self</span><span class="o">-&gt;</span><span class="nf">hasRoot</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s1">'No bootstrapped site.'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s1">'The following site is bootstrapped:'</span><span class="p">);</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$self</span><span class="o">-&gt;</span><span class="nf">legacyRecord</span><span class="p">(),</span> <span class="kc">true</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div><p>Executing it looks like this:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ddev drush scr example.drush
+Hello world!
+The extra options/arguments to this command were:
+Array
+(
+)
+
+The following site is bootstrapped:
+Array
+(
+    [root] =&gt; /var/www/html/web
+    [uri] =&gt; https://d9book2.ddev.site
+)
+</code></pre></div></div><h3 id="database-query-example"> <a aria-labelledby="database-query-example" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#database-query-example"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Database query example</h3><p>Here is <code class="language-plaintext highlighter-rouge">example3.drush</code> with a database query:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Drush\Drush</span><span class="p">;</span>
+
+<span class="nv">$database</span> <span class="o">=</span> <span class="nc">\Drupal</span><span class="o">::</span><span class="nf">database</span><span class="p">();</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$database</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="s2">"SELECT nid, vid, type  FROM </span><span class="si">{</span><span class="nv">node</span><span class="si">}</span><span class="s2"> n"</span><span class="p">);</span>
+<span class="nv">$results</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="nf">fetchAll</span><span class="p">();</span>
+
+<span class="nv">$result_count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$results</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"Result count = "</span> <span class="mf">.</span> <span class="nv">$result_count</span><span class="p">);</span>
+</code></pre></div></div><h3 id="entityquery-example"> <a aria-labelledby="entityquery-example" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#entityquery-example"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> entityQuery example</h3><p>Here is <code class="language-plaintext highlighter-rouge">equery1.php</code> showing looping through results of the query</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="nc">\Drupal</span><span class="o">::</span><span class="nf">entityQuery</span><span class="p">(</span><span class="s1">'node'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="nf">condition</span><span class="p">(</span><span class="s1">'status'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="nf">condition</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'vote'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="nb">sort</span><span class="p">(</span><span class="s1">'title'</span><span class="p">,</span> <span class="s1">'ASC'</span><span class="p">);</span>
+<span class="nv">$nids</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$nids</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"No votes found"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"Found "</span> <span class="mf">.</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$nids</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">" articles"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$nids</span> <span class="k">as</span> <span class="nv">$nid</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$node</span> <span class="o">=</span> <span class="nc">\Drupal\node\Entity\Node</span><span class="o">::</span><span class="nf">load</span><span class="p">(</span><span class="nv">$nid</span><span class="p">);</span>
+  <span class="nv">$title</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">();</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">output</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">writeln</span><span class="p">(</span><span class="s2">"Nid: "</span> <span class="mf">.</span> <span class="nv">$nid</span> <span class="mf">.</span> <span class="s2">" title: "</span> <span class="mf">.</span> <span class="nv">$title</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div><p>You could also change values and update the nodes using code like this:</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">foreach</span> <span class="p">(</span><span class="nv">$nids</span> <span class="k">as</span> <span class="nv">$nid</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$node</span> <span class="o">=</span> <span class="nc">\Drupal\node\Entity\Node</span><span class="o">::</span><span class="nf">load</span><span class="p">(</span><span class="nv">$nid</span><span class="p">);</span>
+  <span class="nv">$title</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">();</span>
+
+  <span class="nv">$old_title</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="nv">$title</span><span class="s2"> to </span><span class="nv">$old_title</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="nv">$node</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'title'</span><span class="p">,</span> <span class="nv">$old_title</span><span class="p">);</span>
+  <span class="nv">$node</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">print</span> <span class="s2">"finished.</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">return</span><span class="p">;</span>
+</code></pre></div></div><h2 id="drush-does-that"> <a aria-labelledby="drush-does-that" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-does-that"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush does that?</h2><p>Who isn't impressed by the things Drush does? It really shows off the incredible talent of Moshe Weitzman and the team that keep Drush moving. Drush can do almost anything. Here are a few that I like:</p><h3 id="list-blocks"> <a aria-labelledby="list-blocks" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#list-blocks"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> List blocks</h3><p>To get <code class="language-plaintext highlighter-rouge">drush</code> to list all the blocks on your site.</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush ev <span class="s2">"print_r(array_keys(</span><span class="se">\D</span><span class="s2">rupal::service('plugin.manager.block')-&gt;getDefinitions()));"</span>
+</code></pre></div></div><p>which outputs something like:</p><p><img alt="Block listing" src="https://selwynpolit.github.io/d9book/assets/images/block_listing.png"/></p><h3 id="generate-code"> <a aria-labelledby="generate-code" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#generate-code"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Generate code</h3><p>Drush can write modules (maybe not quite as well as ChatGPT), but they will save you tons of time. Use drush generate module and or drush generate controller to get a nice starting point for you to write your own controllers.</p><p>For more, on generating controllers see https://www.drush.org/latest/generators/controller/</p><p>This is what it looks like to generate a controller:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush generate controller
+
+ Welcome to controller generator!
+----------------------------------
+
+ Module machine name [web]:
+ ➤ general
+
+ Class [GeneralController]:
+ ➤ ExampleController
+
+ Would you like to inject dependencies? [No]:
+ ➤
+
+ Would you like to create a route for this controller? [Yes]:
+ ➤
+
+ Route name [general.example]:
+ ➤ general.book_example
+
+ Route path [/general/example]:
+ ➤ /general/book_example
+
+ Route title [Example]:
+ ➤ Book Example
+
+ Route permission [access content]:
+ ➤
+
+ The following directories and files have been created or updated:
+-------------------------------------------------------------------
+ • /Users/selwyn/Sites/d9book2/web/modules/custom/general/general.routing.yml
+ • /Users/selwyn/Sites/d9book2/web/modules/custom/general/src/Controller/ExampleController.php
+</code></pre></div></div><h3 id="sanitize-databases"> <a aria-labelledby="sanitize-databases" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#sanitize-databases"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Sanitize Databases</h3><p>From <a href="https://www.drush.org/latest/commands/sql_sanitize/">https://www.drush.org/latest/commands/sql_sanitize/</a></p><p>Sanitize the database by removing or obfuscating user data.</p><p>Commandfiles may add custom operations by implementing:</p><ul><li><p>\@hook on-event sql-sanitize-confirms. Display summary to user before confirmation.</p><li><p>\@hook post-command sql-sanitize. Run queries or call APIs to perform sanitizing</p></li></li></ul><p>Several working commandfiles may be found at <a href="https://github.com/drush-ops/drush/tree/11.x/src/Drupal/Commands/sql">https://github.com/drush-ops/drush/tree/11.x/src/Drupal/Commands/sql</a></p><h3 id="delete-nodes"> <a aria-labelledby="delete-nodes" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#delete-nodes"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Delete nodes</h3><p>To delete all node entities in batches of 5 use:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush entity:delete node --chunks=5
+</code></pre></div></div><p>More from <a href="https://www.drush.org/latest/commands/entity_delete/">https://www.drush.org/latest/commands/entity_delete/</a></p><ul><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete node --bundle=article</code>. Delete all article entities.</p><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete shortcut</code>. Delete all shortcut entities.</p><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete node 22,24</code>. Delete nodes 22 and 24.</p><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete node --exclude=9,14,81</code>. Delete all nodes except node 9, 14 and 81.</p><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete user</code>. Delete all users except uid=1.</p><li><p><code class="language-plaintext highlighter-rouge">drush entity:delete node --chunks=5</code>. Delete all node entities in steps of 5.</p></li></li></li></li></li></li></ul><h3 id="delete-redirects"> <a aria-labelledby="delete-redirects" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#delete-redirects"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Delete redirects</h3><p>Delete all redirects on local site</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush @self entity:delete redirect
+</code></pre></div></div><h3 id="watch-the-watchdog-log"> <a aria-labelledby="watch-the-watchdog-log" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#watch-the-watchdog-log"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Watch the watchdog log</h3><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush watchdog:tail
+
+348	09/Jan 19:29	cron	Info	Cron run completed.
+347	09/Jan 19:29	cron	Info	Execution of update_cron() took 2504.96ms.
+346	09/Jan 19:29	cron	Warning	Attempting to re-run cron while it is already running.
+345	09/Jan 19:29	cron	Info	Starting execution of update_cron(), execution of system_cron() took 1420.76ms.
+344	09/Jan 19:29	cron	Info	Starting execution of system_cron(), execution of search_cron() took 123.02ms.
+343	09/Jan 19:29	cron	Info	Starting execution of search_cron(), execution of node_cron() took 56.93ms.
+342	09/Jan 19:29	cron	Info	Starting execution of node_cron(), execution of history_cron() took 23.6ms.
+341	09/Jan 19:29	cron	Info	Starting execution of history_cron(), execution of file_cron() took 48.27ms.
+</code></pre></div></div><h3 id="read-drupal-config"> <a aria-labelledby="read-drupal-config" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#read-drupal-config"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Read Drupal config</h3><p>To display any config value, use drush cget:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush cget admin_toolbar.settings
+
+menu_depth: 4
+</code></pre></div></div><p>Or</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush cget user.settings
+_core:
+  default_config_hash: w314Zp7B4zzzzzzzzzv-KwZO2E1fSSK0
+langcode: en
+anonymous: Anonymous
+verify_mail: true
+notify:
+  cancel_confirm: true
+  password_reset: true
+  status_activated: true
+  status_blocked: false
+  status_canceled: false
+  register_admin_created: true
+  register_no_approval_required: true
+  register_pending_approval: true
+register: visitors_admin_approval
+cancel_method: user_cancel_block
+password_reset_timeout: 86400
+password_strength: true
+</code></pre></div></div><p>And yes, you can use config:set (or cset) to change configuration. For more see <a href="https://www.drush.org/latest/commands/config_get/">https://www.drush.org/latest/commands/config_get/</a></p><h3 id="check-if-current-config-matches-exported-config"> <a aria-labelledby="check-if-current-config-matches-exported-config" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#check-if-current-config-matches-exported-config"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Check if current config matches exported config</h3><p>When working on a project, to make sure you have exported any changes to config so you can check it into git, use drush cst and drush cex to export.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush cst
+ [notice] No differences between DB and sync directory.
+</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush cex -y
+</code></pre></div></div><p>More at <a href="https://www.drush.org/latest/commands/config_status/">https://www.drush.org/latest/commands/config_status/</a> and <a href="https://www.drush.org/latest/commands/config_export/">https://www.drush.org/latest/commands/config_export/</a></p><p>Importing the config (and overwriting what is currently in the database is accomplished with:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush cim -y
+</code></pre></div></div><h3 id="user-login"> <a aria-labelledby="user-login" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#user-login"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> User Login</h3><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush uli 1 /admin/config (uid = 1, go directly to /admin/config)
+
+$ drush uli --name=Sarah
+
+$ drush uli --mail=Phase3TestPark@mightycitizen.com
+
+$ drush @wolfman.local uli --no-browser
+
+$ drush uli --no-browser
+http://default/user/reset/1/1673815967/cLRjg5XAOlDzr5UrkirPg-kmX8KWGSwILUeyteZbsUU/login
+</code></pre></div></div><p>Note. The URL above isn’t a usable URL but you can just paste everything starting at /user onto the end of the real URL in your browser e.g. https://d9book2/ddev.site/ user/reset/1/1673815967/cLRjg5XAOlDzr5UrkirPg-kmX8KWGSwILUeyteZbsUU/login</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush @nicer.prod uli --no-browser --uid=11
+
+$ drush uli --no-browser --uri=team.ddev.site --mail=TestPub1@team.com
+
+$ drush uli --no-browser --uri=https://team.ddev.site --mail=arnie.williamson@team.com
+
+$ drush uli --no-browser --uri=https://d9book2.ddev.site https://d9book2.ddev.site/user/reset/1/1673816036/RMTR1AVzcR-GeBlW1ckyqJZ-1kvA3gebidmPghSjMg4/login
+</code></pre></div></div><p>More at <a href="https://www.drush.org/latest/commands/user_login/">https://www.drush.org/latest/commands/user_login/</a></p><h3 id="drupaldirectory"> <a aria-labelledby="drupaldirectory" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drupaldirectory"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drupal:directory</h3><p>Return devel directory</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush dd devel
+
+/Users/selwyn/Sites/d9book2/web/modules/contrib/devel
+</code></pre></div></div><p>Return files directory</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush dd files
+
+/Users/selwyn/Sites/d9book2/web/sites/default/files
+</code></pre></div></div><p>Return Drupal root directory</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush dd
+
+/Users/selwyn/Sites/d9book2/web
+</code></pre></div></div><p>Navigate to the files directory.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd $(drush dd files)
+</code></pre></div></div><h2 id="global-install"> <a aria-labelledby="global-install" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#global-install"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Global Install</h2><p>To install drush globally so you can just issue drush commands from anywhere on your system (mac only) use:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer global require drush/drush:\^8.0
+</code></pre></div></div><p>And add this to your .bashrc or .zshrc:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias drush = '~.composer/vendor/drush/drush/drush'
+</code></pre></div></div><h2 id="drush-aliases"> <a aria-labelledby="drush-aliases" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-aliases"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush aliases</h2><p>These allow Drush to reach out to your client websites from your local machine. The alias files should be stored in /drush/sites (that is above your docroot so they will never be publicly accessible) and can be checked into your repo. If you have a file named <code class="language-plaintext highlighter-rouge">/drush/sites/abc.site.yml</code> you will be able to issue drush commands like <code class="language-plaintext highlighter-rouge">drush @abc.dev status</code> or <code class="language-plaintext highlighter-rouge">drush @abc.prod sql-dump \&gt;dbprod.sql</code> from within the directory for your abc site.</p><p>You can clear cache (cr), enable a module (en devel), dump a database to your local (sql-dump), sync files from remote to local:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush @mysite cr
+drush @mysite en devel
+drush @mysite sql-dump &gt;dbprod.sql
+drush rsync &lt;source&gt; &lt;dest&gt; (To rsync files to/from sites.  More on that below)
+</code></pre></div></div><p>These commands will only work on your computer if you have drush installed globally with all its requirements met. As usual, DDEV has a nice workaround. To use drush aliases with DDEV, you will need to setup your ssh keys to run in the containers (ddev auth ssh) and then you can issue drush alias commands from within the containers. For example:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ddev auth ssh
+$ drush @abc.test status
+
+Drupal version   : 9.4.8
+Site URI         : http://abcmaterialsstg.prod.acquia-sites.com
+DB driver        : mysql
+DB hostname      : db-1zzzzzzzzb.cdb.database.services.acquia.io
+DB port          : 3306
+DB username      : uMzzzzzzs
+DB name          : 1f3zzzzzzddb
+Database         : Connected
+Drupal bootstrap : Successful
+Default theme    : abc
+Admin theme      : seven
+PHP binary       : /usr/local/php8.1/bin/php
+PHP config       : /usr/local/php8.1/etc/cli/php.ini
+PHP OS           : Linux
+PHP version      : 8.1.10
+Drush script     : /var/www/html/vendor/drush/drush/drush
+Drush version    : 11.3.2
+Etc.
+</code></pre></div></div><h3 id="example-drush-alias-file"> <a aria-labelledby="example-drush-alias-file" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#example-drush-alias-file"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Example Drush alias file</h3><p>Here is an example drush alias (<code class="language-plaintext highlighter-rouge">abc.site.yml</code>) where <code class="language-plaintext highlighter-rouge">abc.dev</code> refers to a site at the fictitious IP address of 123.45.67.123 and the <code class="language-plaintext highlighter-rouge">abc.devsp</code> refers to a site at 100.1.2.3. The first assumes there is an ssh key setup on the host whereas the second would expect a password to be entered each time a drush command is issued.</p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dev</span><span class="pi">:</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">123.45.67.123</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s">master_gzzzzzz</span>
+  <span class="na">root</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/home/zzzz.cloudy.com/kzzzzzz/public_html/web'</span>
+  <span class="na">uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://doug.merrysite.com'</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+  <span class="na">paths</span><span class="pi">:</span>
+    <span class="na">drush-script</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/home/zzzz.cloudy.com/kzzzzzz/public_html/vendor/drush/drush/drush'</span>
+
+<span class="na">devsp</span><span class="pi">:</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">100.1.2.3</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s">spolit</span>
+  <span class="na">root</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/var/www/dev.paris.com/web'</span>
+  <span class="na">uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://dev.paris.com'</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+    <span class="na">options</span><span class="pi">:</span> <span class="s1">'</span><span class="s">-o</span><span class="nv"> </span><span class="s">PasswordAuthentication=yes'</span>
+  <span class="na">paths</span><span class="pi">:</span>
+    <span class="na">drush-script</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/var/www/dev.paris.com/vendor/drush/drush/drush'</span>
+</code></pre></div></div><h3 id="example-acquia-drush-alias-files"> <a aria-labelledby="example-acquia-drush-alias-files" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#example-acquia-drush-alias-files"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Example Acquia Drush alias files</h3><p>Usually you will need to make your own drush alias files. Here is an example alias file from Acquia. If this file is named <code class="language-plaintext highlighter-rouge">/drush/sites/abc.site.yml</code> you will be able to issue drush commands like <code class="language-plaintext highlighter-rouge">drush @abc.dev status</code> or <code class="language-plaintext highlighter-rouge">drush @abc.prod sql-dump &gt;dbprod.sql</code> from within the directory for your abc site. The command <code class="language-plaintext highlighter-rouge">drush @abc.dev status</code> will return the status for the dev site. The command <code class="language-plaintext highlighter-rouge">drush @abc.prod sql-dump &gt;dbprod.sql</code> will download the entire production from the production server database into a local file called <code class="language-plaintext highlighter-rouge">dbprod.sql</code>. For DDEV use, you should gzip the file and then you can easily import it into your local DDEV database with a command like <code class="language-plaintext highlighter-rouge">ddev import-db --src=dbprod.sql.gz</code>.</p><p>Note. The section in the file below with ssh and tty in it is to resolve a problem (from <a href="https://github.com/drush-ops/drush/issues/4004">https://github.com/drush-ops/drush/issues/4004</a> ) with the sql-dump drush command. Check the afforementioned Github.com issue link for side-effects.</p><p>Also, a little unusual is the <code class="language-plaintext highlighter-rouge">prod.livdev</code> section below. This facilitates using Acquia's live dev environment feature but is not necessary for hosting environments other than Acquia.</p><p>For more on using Drush aliases with Acquia see <a href="https://docs.acquia.com/cloud-platform/manage/ssh/drush/aliases/">https://docs.acquia.com/cloud-platform/manage/ssh/drush/aliases/</a></p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Application 'abcmaterials', environment 'dev'.</span>
+<span class="na">dev</span><span class="pi">:</span>
+  <span class="na">root</span><span class="pi">:</span> <span class="s">/var/www/html/docroot</span>
+  <span class="na">ac-site</span><span class="pi">:</span> <span class="s">abcmaterials</span>
+  <span class="na">ac-env</span><span class="pi">:</span> <span class="s">dev</span>
+  <span class="na">ac-realm</span><span class="pi">:</span> <span class="s">prod</span>
+  <span class="na">uri</span><span class="pi">:</span> <span class="s">abcmaterialsdev.prod.acquia-sites.com</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">abcmaterialsdev.ssh.prod.acquia-sites.com</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s">abcmaterials.dev</span>
+  <span class="na">paths</span><span class="pi">:</span>
+    <span class="na">drush-script</span><span class="pi">:</span> <span class="s">drush9</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+
+<span class="c1"># Application 'abcmaterials', environment 'test'.</span>
+<span class="na">test</span><span class="pi">:</span>
+  <span class="na">root</span><span class="pi">:</span> <span class="s">/var/www/html/docroot</span>
+  <span class="na">ac-site</span><span class="pi">:</span> <span class="s">abcmaterials</span>
+  <span class="na">ac-env</span><span class="pi">:</span> <span class="s">test</span>
+  <span class="na">ac-realm</span><span class="pi">:</span> <span class="s">prod</span>
+  <span class="na">uri</span><span class="pi">:</span> <span class="s">abcmaterialsstg.prod.acquia-sites.com</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">abcmaterialsstg.ssh.prod.acquia-sites.com</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s">abcmaterials.test</span>
+  <span class="na">paths</span><span class="pi">:</span>
+    <span class="na">drush-script</span><span class="pi">:</span> <span class="s">drush9</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+
+<span class="c1"># Application 'abcmaterials', environment 'prod'.</span>
+<span class="na">prod</span><span class="pi">:</span>
+  <span class="na">root</span><span class="pi">:</span> <span class="s">/var/www/html/abcmaterials.prod/docroot</span>
+  <span class="na">ac-site</span><span class="pi">:</span> <span class="s">abcmaterials</span>
+  <span class="na">ac-env</span><span class="pi">:</span> <span class="s">prod</span>
+  <span class="na">ac-realm</span><span class="pi">:</span> <span class="s">prod</span>
+  <span class="na">uri</span><span class="pi">:</span> <span class="s">abcmaterials.prod.acquia-sites.com</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+  <span class="na">prod.livedev</span><span class="pi">:</span>
+    <span class="na">parent</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@abcmaterials.prod'</span>
+    <span class="na">root</span><span class="pi">:</span> <span class="s">/mnt/gfs/abcmaterials.prod/livedev/docroot</span>
+  <span class="na">host</span><span class="pi">:</span> <span class="s">abcmaterials.ssh.prod.acquia-sites.com</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s">abcmaterials.prod</span>
+  <span class="na">paths</span><span class="pi">:</span>
+    <span class="na">drush-script</span><span class="pi">:</span> <span class="s">drush9</span>
+  <span class="na">ssh</span><span class="pi">:</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="m">0</span>
+</code></pre></div></div><h3 id="example-drush-alias-file-from-drush-project"> <a aria-labelledby="example-drush-alias-file-from-drush-project" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#example-drush-alias-file-from-drush-project"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Example Drush alias file from Drush project</h3><p>You can view this on github at <a href="https://github.com/drush-ops/drush/blob/master/examples/example.site.yml">https://github.com/drush-ops/drush/blob/master/examples/example.site.yml</a></p><div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#</span>
+<span class="c1"># Example of valid statements for an alias file.</span>
+
+<span class="c1"># Basic Alias File Usage</span>
+<span class="c1">#</span>
+<span class="c1"># In its most basic form, the Drush site alias feature provides a way</span>
+<span class="c1"># for teams to share short names that refer to the live and staging sites</span>
+<span class="c1"># (usually remote) for a given Drupal site.</span>
+<span class="c1">#</span>
+<span class="c1"># 1. Make a local working clone of your Drupal site and then</span>
+<span class="c1">#    `cd` to the project work to select it.</span>
+<span class="c1"># 2. Add an alias file called $PROJECT/drush/sites/self.site.yml,</span>
+<span class="c1">#    where $PROJECT is the project root (location of composer.json file).</span>
+<span class="c1"># 3. Run remote commands against the shared live or stage sites</span>
+<span class="c1">#</span>
+<span class="c1"># Following these steps, a cache:rebuild on the live environment would be:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush @live cache:rebuild</span>
+<span class="c1">#</span>
+<span class="c1"># The site alias file should be named `self.site.yml` because this name is</span>
+<span class="c1"># special, and is used to define the different environments (usually remote)</span>
+<span class="c1"># of the current Drupal site.</span>
+<span class="c1">#</span>
+<span class="c1"># The contents of the alias file should look something like the example below:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># # File: self.site.yml</span>
+<span class="c1"># live:</span>
+<span class="c1">#   host: server.domain.com</span>
+<span class="c1">#   user: www-admin</span>
+<span class="c1">#   root: /other/path/to/live/drupal</span>
+<span class="c1">#   uri: http://example.com</span>
+<span class="c1"># stage:</span>
+<span class="c1">#   host: server.domain.com</span>
+<span class="c1">#   user: www-admin</span>
+<span class="c1">#   root: /other/path/to/stage/drupal</span>
+<span class="c1">#   uri: http://stage.example.com</span>
+<span class="c1"># @endcode</span>
+<span class="c1">#</span>
+<span class="c1"># The top-level element names (`live` and `stage` in the example above) are</span>
+<span class="c1"># used to identify the different environments available for this site. These</span>
+<span class="c1"># may be used on the command line to select a different target environment</span>
+<span class="c1"># to operate on by prepending an `@` character, e.g. `@live` or `@stage`.</span>
+<span class="c1">#</span>
+<span class="c1"># All of the available aliases for a site's environments may be listed via:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush site:alias @self</span>
+<span class="c1">#</span>
+<span class="c1"># The elements of a site alias environment are:</span>
+<span class="c1">#</span>
+<span class="c1"># - 'host': The fully-qualified domain name of the remote system</span>
+<span class="c1">#   hosting the Drupal instance. **Important Note: The remote-host option</span>
+<span class="c1">#   must be omitted for local sites, as this option controls various</span>
+<span class="c1">#   operations, such as whether or not rsync parameters are for local or</span>
+<span class="c1">#   remote machines, and so on.</span>
+<span class="c1"># - 'user': The username to log in as when using ssh or rsync. If each user</span>
+<span class="c1">#    has to use own username, you can create an environment variable which holds</span>
+<span class="c1">#    the value, and reference via ${env.PROJECT_SSH_USER} (for example). Or you may</span>
+<span class="c1">#    omit the `user:` item and specify a user in the `~/.ssh/config` file.</span>
+<span class="c1"># - 'root': The Drupal root; must not be specified as a relative path.</span>
+<span class="c1"># - 'uri': The value of --uri should always be the same as</span>
+<span class="c1">#   when the site is being accessed from a web browser (e.g. http://example.com)</span>
+<span class="c1">#</span>
+<span class="c1"># Drush uses ssh to run commands on remote systems; all team members should</span>
+<span class="c1"># install ssh keys on the target servers (e.g. via ssh-add).</span>
+
+<span class="c1"># Advanced Site Alias File Usage</span>
+<span class="c1">#</span>
+<span class="c1"># It is also possible to create site alias files that reference other</span>
+<span class="c1"># sites on the same local system. Site alias files for other local sites</span>
+<span class="c1"># are usually stored in the directory `~/.drush/sites`; however, Drush does</span>
+<span class="c1"># not search this location for alias files by default. To use this location,</span>
+<span class="c1"># you must add the path in your Drush configuration file. For example,</span>
+<span class="c1"># to re-add both of the default user alias path from Drush 8, put the following</span>
+<span class="c1"># in your ~/.drush/drush.yml configuration file:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># drush:</span>
+<span class="c1">#   paths:</span>
+<span class="c1">#     alias-path:</span>
+<span class="c1">#       - '${env.HOME}/.drush/sites'</span>
+<span class="c1">#       - /etc/drush/sites</span>
+<span class="c1"># @endcode</span>
+<span class="c1">#</span>
+<span class="c1"># The command `drush core:init` will automatically configure your</span>
+<span class="c1"># ~/.drush/drush.yml configuration file to add `~/.drush/sites` and</span>
+<span class="c1"># `/etc/drush/sites` as locations where alias files may be placed.</span>
+<span class="c1">#</span>
+<span class="c1"># A canonical alias named "example" that points to a local</span>
+<span class="c1"># Drupal site named "http://example.com" looks like this:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># File: example.site.yml</span>
+<span class="c1"># dev:</span>
+<span class="c1">#   root: /path/to/drupal</span>
+<span class="c1">#   uri: http://example.com</span>
+<span class="c1"># @endcode</span>
+<span class="c1">#</span>
+<span class="c1"># Note that the first part of the filename (in this case "example")</span>
+<span class="c1"># defines the name of the site alias, and the top-level key ("dev")</span>
+<span class="c1"># defines the name of the environment.</span>
+<span class="c1">#</span>
+<span class="c1"># With these definitions in place, it is possible to run commands targeting</span>
+<span class="c1"># the dev environment of the target site via:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush @example.dev status</span>
+<span class="c1">#</span>
+<span class="c1"># This command is equivalent to the longer form:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush --root=/path/to/drupal --uri=http://example.com status</span>
+<span class="c1">#</span>
+<span class="c1"># See "Additional Site Alias Options" below for more information.</span>
+
+<span class="c1"># Converting Legacy Alias Files</span>
+<span class="c1">#</span>
+<span class="c1"># To convert legacy alias (*.aliases.drushrc.php) to yml, run the</span>
+<span class="c1"># site:alias-convert command.</span>
+
+<span class="c1"># Altering aliases:</span>
+<span class="c1">#</span>
+<span class="c1"># See examples/Commands/SiteAliasAlterCommands.php for an example.</span>
+
+<span class="c1"># Environment variables:</span>
+<span class="c1">#</span>
+<span class="c1"># Site aliases may reference environment variables, just like any Drush config</span>
+<span class="c1"># file. For example, ${env.PROJECT_SSH_USER} will be replaced by the value</span>
+<span class="c1"># of the PROJECT_SSH_USER environment value.</span>
+<span class="c1">#</span>
+<span class="c1"># SSH site aliases may set environment variables via the 'env-vars' key.</span>
+<span class="c1"># See below.</span>
+
+<span class="c1"># Additional Site Alias Options</span>
+<span class="c1">#</span>
+<span class="c1"># Aliases are commonly used to define short names for</span>
+<span class="c1"># local or remote Drupal installations; however, an alias</span>
+<span class="c1"># is really nothing more than a collection of options.</span>
+<span class="c1">#</span>
+<span class="c1"># - 'docker': When specified, Drush executes via docker-compose exec rather than ssh</span>
+<span class="c1">#    - 'service': the name of the container to run on.</span>
+<span class="c1">#    - 'exec':</span>
+<span class="c1">#      - 'options': Options for the exec subcommand.</span>
+<span class="c1"># - 'os': The operating system of the remote server.  Valid values</span>
+<span class="c1">#   are 'Windows' and 'Linux'. Be sure to set this value for all remote</span>
+<span class="c1">#   aliases because the default value is PHP_OS if 'remote-host'</span>
+<span class="c1">#   is not set, and 'Linux' (or $options['remote-os']) if it is. Therefore,</span>
+<span class="c1">#   if you set a 'remote-host' value, and your remote OS is Windows, if you</span>
+<span class="c1">#   do not set the 'OS' value, it will default to 'Linux' and could cause</span>
+<span class="c1">#   unintended consequences, particularly when running 'drush sql-sync'.</span>
+<span class="c1"># - 'ssh': Contains settings used to control how ssh commands are generated</span>
+<span class="c1">#   when running remote commands.</span>
+<span class="c1">#   - 'options': Contains additional commandline options for the ssh command</span>
+<span class="c1">#   itself, e.g. "-p 100"</span>
+<span class="c1">#   - 'tty': Usually, Drush will decide whether or not to create a tty (via</span>
+<span class="c1">#   the ssh '--t' option) based on whether the local Drush command is running</span>
+<span class="c1">#   interactively or not. To force Drush to always or never create a tty,</span>
+<span class="c1">#   set the 'ssh.tty' option to 'true' or 'false', respectively.</span>
+<span class="c1"># - 'paths': An array of aliases for common rsync targets.</span>
+<span class="c1">#   Relative aliases are always taken from the Drupal root.</span>
+<span class="c1">#   - 'files': Path to 'files' directory.  This will be looked up if not</span>
+<span class="c1">#     specified.</span>
+<span class="c1">#   - 'drush-script': Path to the remote Drush command.</span>
+<span class="c1"># - 'command': These options will only be set if the alias</span>
+<span class="c1">#   is used with the specified command.  In the example below, the option</span>
+<span class="c1">#   `--no-dump` will be selected whenever the @stage alias</span>
+<span class="c1">#   is used in any of the following ways:</span>
+<span class="c1">#     - `drush @stage sql-sync @self @live`</span>
+<span class="c1">#     - `drush sql-sync @stage @live`</span>
+<span class="c1">#     - `drush sql-sync @live @stage`</span>
+<span class="c1">#   NOTE: Setting boolean options broke with Symfony 3. This will be fixed</span>
+<span class="c1">#     in a future release. See: https://github.com/drush-ops/drush/issues/2956</span>
+<span class="c1"># - 'env-vars': An array of key / value pairs that will be set as environment</span>
+<span class="c1">#   variables.</span>
+<span class="c1">#</span>
+<span class="c1"># Complex example:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># # File: remote.site.yml</span>
+<span class="c1"># live:</span>
+<span class="c1">#   host: server.domain.com</span>
+<span class="c1">#   user: www-admin</span>
+<span class="c1">#   root: /other/path/to/drupal</span>
+<span class="c1">#   uri: http://example.com</span>
+<span class="c1">#   ssh:</span>
+<span class="c1">#     options: '-p 100'</span>
+<span class="c1">#   paths:</span>
+<span class="c1">#     drush-script: '/path/to/drush'</span>
+<span class="c1">#   env-vars:</span>
+<span class="c1">#     PATH: /bin:/usr/bin:/home/www-admin/.composer/vendor/bin</span>
+<span class="c1">#     DRUPAL_ENV: live</span>
+<span class="c1">#   command:</span>
+<span class="c1">#     site:</span>
+<span class="c1">#       install:</span>
+<span class="c1">#         options:</span>
+<span class="c1">#           admin-password: 'secret-secret'</span>
+<span class="c1"># @endcode</span>
+
+<span class="c1"># Site Alias Files for Service Providers</span>
+<span class="c1">#</span>
+<span class="c1"># There are a number of service providers that manage Drupal sites as a</span>
+<span class="c1"># service. Drush allows service providers to create collections of site alias</span>
+<span class="c1"># files to reference all of the sites available to a single user. In order</span>
+<span class="c1"># to do this, a new location must be defined in your Drush configuration</span>
+<span class="c1"># file:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># drush:</span>
+<span class="c1">#   paths:</span>
+<span class="c1">#     alias-path:</span>
+<span class="c1">#       - '${env.HOME}/.drush/sites/provider-name'</span>
+<span class="c1"># @endcode</span>
+<span class="c1">#</span>
+<span class="c1"># Site aliases stored in this directory may then be referenced by its</span>
+<span class="c1"># full alias name, including its location, e.g.:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush @provider-name.example.dev</span>
+<span class="c1">#</span>
+<span class="c1"># Such alias files may still be referenced by their shorter name, e.g.</span>
+<span class="c1"># `@example.dev`. Note that it is necessary to individually list every</span>
+<span class="c1"># location where site alias files may be stored; Drush never does recursive</span>
+<span class="c1"># (deep) directory searches for alias files.</span>
+<span class="c1">#</span>
+<span class="c1"># The `site:alias` command may also be used to list all of the sites and</span>
+<span class="c1"># environments in a given location, e.g.:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ drush site:alias @provider-name</span>
+<span class="c1">#</span>
+<span class="c1"># Add the option `--format=list` to show only the names of each site and</span>
+<span class="c1"># environment without also showing the values in each alias record.</span>
+
+<span class="c1"># Wildcard Aliases for Service Providers</span>
+<span class="c1">#</span>
+<span class="c1"># Some service providers that manage Drupal sites allow customers to create</span>
+<span class="c1"># multiple "environments" for a site. It is common for these providers to</span>
+<span class="c1"># also have a feature to automatically create Drush aliases for all of a</span>
+<span class="c1"># user's sites. Rather than write one record for every environment in that</span>
+<span class="c1"># site, it is also possible to write a single "wildcard" alias that represents</span>
+<span class="c1"># all possible environments. This is possible if the contents of each</span>
+<span class="c1"># environment alias are identical save for the name of the environment in</span>
+<span class="c1"># one or more values. The variable `${env-name}` will be substituted with the</span>
+<span class="c1"># environment name wherever it appears.</span>
+<span class="c1">#</span>
+<span class="c1"># Example wildcard record:</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># # File: remote-example.site.yml</span>
+<span class="c1"># '*':</span>
+<span class="c1">#   host: ${env-name}.server.domain.com</span>
+<span class="c1">#   user: www-admin</span>
+<span class="c1">#   root: /path/to/${env-name}</span>
+<span class="c1">#   uri: http://${env-name}.remote-example.com</span>
+<span class="c1"># @endcode</span>
+<span class="c1">#</span>
+<span class="c1"># With a wildcard record, any environment name may be used, and will always</span>
+<span class="c1"># match. This is not desirable in instances where the specified environment</span>
+<span class="c1"># does not exist (e.g. if the user made a typo). An alias alter hook in a</span>
+<span class="c1"># policy file may be used to catch these mistakes and report an error.</span>
+<span class="c1"># @see SiteAliasAlterCommands for an example on how to do this.</span>
+
+<span class="c1"># Developer Information</span>
+<span class="c1">#</span>
+<span class="c1"># See https://github.com/consolidation/site-alias for more developer</span>
+<span class="c1"># information about Site Aliases.</span>
+<span class="c1">#</span>
+<span class="c1"># An example appears below. Edit to suit and remove the @code / @endcode and</span>
+<span class="c1"># leading hashes to enable.</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># # File: mysite.site.yml</span>
+<span class="c1"># local:</span>
+<span class="c1"># This environment is an example of the DockerCompose transport.</span>
+<span class="c1">#   docker:</span>
+<span class="c1">#     service: drupal</span>
+<span class="c1">#     exec:</span>
+<span class="c1">#       options: --user USER</span>
+<span class="c1"># stage:</span>
+<span class="c1">#   uri: http://stage.example.com</span>
+<span class="c1">#   root: /path/to/remote/drupal/root</span>
+<span class="c1">#   host: mystagingserver.myisp.com</span>
+<span class="c1">#   user: publisher</span>
+<span class="c1">#   os: Linux</span>
+<span class="c1">#   paths:</span>
+<span class="c1">#    - files: sites/mydrupalsite.com/files</span>
+<span class="c1">#    - custom: /my/custom/path</span>
+<span class="c1">#   command:</span>
+<span class="c1">#     sql:</span>
+<span class="c1">#       sync:</span>
+<span class="c1">#         options:</span>
+<span class="c1">#           no-dump: true</span>
+<span class="c1"># dev:</span>
+<span class="c1">#   root: /path/to/docroot</span>
+<span class="c1">#   uri: https://dev.example.com</span>
+<span class="c1"># @endcode</span>
+
+<span class="c1"># Example of rsync with exclude-paths</span>
+<span class="c1">#</span>
+<span class="c1"># Note that most options typically passed to rsync via `drush rsync` are</span>
+<span class="c1"># "passthrough options", which is to say they appear after the `--` separator</span>
+<span class="c1"># on the command line. Passthrough options are actually arguments, and</span>
+<span class="c1"># it is not possible to set default arguments in an alias record. The</span>
+<span class="c1"># `drush rsync` command does support two options, `--mode` and `--exclude-paths`,</span>
+<span class="c1"># which are interpreted directly by Drush. Default values for these options</span>
+<span class="c1"># may be specified in an alias record, as shown below.</span>
+<span class="c1">#</span>
+<span class="c1"># @code</span>
+<span class="c1"># dev:</span>
+<span class="c1">#   root: /path/to/docroot</span>
+<span class="c1">#   uri: https://dev.example.com</span>
+<span class="c1">#   command:</span>
+<span class="c1">#     core:</span>
+<span class="c1">#       rsync:</span>
+<span class="c1">#         options:</span>
+<span class="c1">#           mode: rlptz</span>
+<span class="c1">#           exclude-paths: 'css:imagecache:ctools:js:tmp:php:styles'</span>
+<span class="c1"># @endcode</span>
+</code></pre></div></div><h2 id="drush-rsync"> <a aria-labelledby="drush-rsync" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-rsync"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush rsync</h2><p>You can use aliases to rsync files using drush rsync. The syntax is: <code class="language-plaintext highlighter-rouge">drush rsync &lt;source&gt; &lt;dest&gt;</code> or more specifically: <code class="language-plaintext highlighter-rouge">drush rsync @sitename.prod:/path/to/files /path/to/local/destination</code></p><p>You can use <code class="language-plaintext highlighter-rouge">@self</code> to represent the local site e.g. <code class="language-plaintext highlighter-rouge">drush rsync @labs.prod:%files @self:%files</code></p><p>To copy everything in <code class="language-plaintext highlighter-rouge">./keys</code> folder to the <code class="language-plaintext highlighter-rouge">keys</code> folder on the host use:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>drush rsync ./keys/ @sf:/home/master/applications/dir/public_html/keys/
+</code></pre></div></div><p>Copy 1 file to the dir test server:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush rsync dbprod.sql.gz @dir.testsp:/var/www/dir.tater.com/web/
+</code></pre></div></div><p>You can also use <code class="language-plaintext highlighter-rouge">:%files</code> as a source or dest. Examples below:</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drush rsync @fightclub.prod:/var/www/html/fightclub.prod/docroot/sites/default/files/ ~/Sites/fightclub/docroot/sites/default/files/
+
+drush rsync @dak.prodsp:%files /Users/selwyn/Sites/dakbackup/web/sites/default/files/
+
+drush rsync @dak.prodsp:/var/www/dak.tater.com/web/ /Users/selwyn/Sites/dakbackup/web/
+</code></pre></div></div><p>Copy 1 file from local to @dak.dev: drush rsync dbprod-good.sql.gz @dak.dev:/home/1234567.cloudwaysapps.com/hzzzz/public_html/drush-backups/</p><h2 id="drush-sql-sync"> <a aria-labelledby="drush-sql-sync" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-sql-sync"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush SQL-sync</h2><p>To sync databases use: <code class="language-plaintext highlighter-rouge">drush sql-sync &lt;source&gt; &lt;destination&gt;</code></p><p>e.g.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush sql-sync @flexy.stage @flex.dev
+</code></pre></div></div><h3 id="sql-queries"> <a aria-labelledby="sql-queries" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#sql-queries"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> SQL Queries</h3><p>Examples of SQL queries. Note. you can update, delete or select.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush sqlq "select nid, vid, type from node where type = 'vote'"
+35	40	vote
+36	41	vote
+</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ drush sqlq "select count(*) as redirects"
+1
+</code></pre></div></div><h2 id="drush-launcher"> <a aria-labelledby="drush-launcher" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drush-launcher"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drush launcher</h2><p>install drush launcher from <a href="https://github.com/drush-ops/drush-launcher">https://github.com/drush-ops/drush-launcher</a></p><p>By installing the drush launcher globally on your local machine, you can simply type drush on the command line, and the launcher will find and execute the project specific version of drush located in your project's vendor directory.</p><p>from <a href="https://github.com/drush-ops/drush-launcher">https://github.com/drush-ops/drush-launcher</a>: In order to avoid dependency issues, it is best to require Drush on a per-project basis via Composer (<code class="language-plaintext highlighter-rouge">$ composer require drush/drush</code>). This makes Drush available to your project by placing it at vendor/bin/drush.</p><p>However, it is inconvenient to type <code class="language-plaintext highlighter-rouge">vendor/bin/drush</code> to execute Drush commands. By installing the drush launcher globally on your local machine, you can simply type drush on the command line, and the launcher will find and execute the project specific version of drush located in your project's vendor directory.</p><h2 id="drupal-7-drush-scripts"> <a aria-labelledby="drupal-7-drush-scripts" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#drupal-7-drush-scripts"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Drupal 7 Drush scripts</h2><p>Here are some old Drupal 7 Drush scripts in case they are of any interest</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//content created my admin - d7</span>
+<span class="nv">$uid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nf">db_query</span><span class="p">(</span><span class="s1">'SELECT n.nid, n.title, n.created
+FROM {node} n WHERE n.uid = :uid'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">':uid'</span> <span class="o">=&gt;</span> <span class="nv">$uid</span><span class="p">));</span>
+<span class="c1">// Result is returned as a iterable object that returns a stdClass object on each iteration</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$result</span> <span class="k">as</span> <span class="nv">$record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Perform operations on $record-&gt;title, etc. here.</span>
+  <span class="c1">// in this example the available data would be mapped to object properties:</span>
+  <span class="c1">// $record-&gt;nid, $record-&gt;title, $record-&gt;created</span>
+  <span class="nb">print_r</span><span class="p">(</span><span class="nv">$record</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Login as admin</span>
+<span class="nv">$admin_uid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$form_state</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'uid'</span> <span class="o">=&gt;</span> <span class="nv">$admin_uid</span><span class="p">);</span>
+<span class="nf">user_login_submit</span><span class="p">(</span><span class="k">array</span><span class="p">(),</span> <span class="nv">$form_state</span><span class="p">);</span>
+<span class="c1">// Now the logged in user global $user object become available.</span>
+<span class="k">global</span> <span class="nv">$user</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
+</code></pre></div></div><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Args</span>
+<span class="nf">drush_print</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">);</span>
+<span class="nf">drush_print</span><span class="p">();</span>
+<span class="nf">drush_print</span><span class="p">(</span><span class="s2">"The arguments to this command were:"</span><span class="p">);</span>
+<span class="c1">//</span>
+<span class="c1">// If called with --everything, use drush_get_arguments</span>
+<span class="c1">// to print the commandline arguments.  Note that this</span>
+<span class="c1">// call will include 'php-script' (the drush command)</span>
+<span class="c1">// and the path to this script.</span>
+<span class="c1">//</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">drush_get_option</span><span class="p">(</span><span class="s1">'everything'</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nf">drush_print</span><span class="p">(</span><span class="s2">"  "</span> <span class="mf">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">  "</span><span class="p">,</span> <span class="nf">drush_get_arguments</span><span class="p">()));</span>
+<span class="p">}</span>
+<span class="c1">//</span>
+<span class="c1">// If --everything is not included, then use</span>
+<span class="c1">// drush_shift to pull off the arguments one at</span>
+<span class="c1">// a time.  drush_shift only returns the user</span>
+<span class="c1">// commandline arguments, and does not include</span>
+<span class="c1">// the drush command or the path to this script.</span>
+<span class="c1">//</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nv">$arg</span> <span class="o">=</span> <span class="nf">drush_shift</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nf">drush_print</span><span class="p">(</span><span class="s1">'  '</span> <span class="mf">.</span> <span class="nv">$arg</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">drush_print</span><span class="p">();</span>
+</code></pre></div></div><p>It is optiona to have <code class="language-plaintext highlighter-rouge">&lt;?php opening tag</code> and a <code class="language-plaintext highlighter-rouge">#!</code> lines:</p><p>This script takes a filename as a parameter and checks if the file exists.</p><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">#!/Users/selwyn/.composer/vendor/bin/drush</span>
+
+<span class="nf">drush_print</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">);</span>
+<span class="nf">drush_print</span><span class="p">();</span>
+<span class="nv">$arg</span> <span class="o">=</span> <span class="nf">drush_shift</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$arg</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">drush_print</span><span class="p">(</span><span class="s2">"yep - it's here"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><h2 id="resources"> <a aria-labelledby="resources" class="anchor-heading" href="https://selwynpolit.github.io/d9book/drush#resources"><svg aria-hidden="true" viewbox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a> Resources</h2><ul><li><p>Drush docs site <a href="https://www.drush.org/latest/">https://www.drush.org/latest/</a></p><li><p>Drush repository <a href="https://github.com/drush-ops/drush">https://github.com/drush-ops/drush</a></p><li><p>Drush code generators <a href="https://www.drush.org/latest/generators/all/">https://www.drush.org/latest/generators/all/</a></p><li><p>Stack Exchange Drush issues <a href="https://drupal.stackexchange.com/questions/tagged/drush">https://drupal.stackexchange.com/questions/tagged/drush</a></p><li><p>Drush issue queue on github <a href="https://github.com/drush-ops/drush/issues">https://github.com/drush-ops/drush/issues</a></p><li><p>Creating Drush 9 commands and porting legacy commands October 2017 by Pawel Ginalski https://gbyte.dev/blog/creating-drush-9-commands-and-porting-legacy-commands</p><li><p>Porting commands to Drush 9 from Moshe Weitzman September 2017 <a href="https://weitzman.github.io/blog/port-to-drush9">https://weitzman.github.io/blog/port-to-drush9</a></p><li><p>Drush alias usage on Acquia <a href="https://docs.acquia.com/cloud-platform/manage/ssh/drush/aliases/">https://docs.acquia.com/cloud-platform/manage/ssh/drush/aliases/</a></p><li><p>Controlling multiple sites with Drush 9 from <a href="https://www.drupal.org/user/107701">Joachim Noreiko</a> Mar 2019 <a href="http://www.noreiko.com/blog/controlling-multiple-sites-drush-9">http://www.noreiko.com/blog/controlling-multiple-sites-drush-9</a></p></li></li></li></li></li></li></li></li></li></ul><hr/> <script async="" crossorigin="anonymous" data-category="Q&amp;A" data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyMjY2NDE4" data-emit-metadata="0" data-input-position="bottom" data-lang="en" data-mapping="title" data-reactions-enabled="1" data-repo="selwynpolit/d9book" data-repo-id="MDEwOlJlcG9zaXRvcnkzMjUxNTQ1Nzg=" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js"> </script><hr/><footer><p><a href="https://selwynpolit.github.io/d9book/drush#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"><span xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"> <a href="http://www.selwynpolit.github.io/d9book" property="dct:title" rel="cc:attributionURL">Drupal at your fingertips</a> by <a href="http://www.drupal.org/u/selwynpolit" property="cc:attributionName" rel="cc:attributionURL dct:creator">Selwyn Polit</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" rel="license noopener noreferrer" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height:16px!important;vertical-align:text-bottom;"/> <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height:16px!important;vertical-align:text-bottom;"/> </a></span></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0 mr-2"> Page last modified: <span class="d-inline-block">Apr 24 2023</span>.</p><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/selwynpolit/d9book/tree/gh-pages/book/drush.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div>
+</body></link></meta></meta></meta></head></html>

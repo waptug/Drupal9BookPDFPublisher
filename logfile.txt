@@ -1,0 +1,401 @@
+INFO:root:Creating a new directory for the output files.
+INFO:root:Success. Created a new directory for the output files: Rendered-PDF-2.
+INFO:root:Fetching the main webpage.
+INFO:root:Success. Fetched the main webpage: https://selwynpolit.github.io/d9book/.
+INFO:root:Saving the main index webpage to a local file using wget.
+INFO:root:Success. Saved the main D9BOOK.html webpage to a local file: Rendered-PDF-2/D9BOOK.html.
+INFO:root:Found the following links:
+INFO:root:/d9book/
+INFO:root:/d9book/actions
+INFO:root:/d9book/attribution
+INFO:root:/d9book/bq
+INFO:root:/d9book/blocks
+INFO:root:/d9book/caching
+INFO:root:/d9book/composer
+INFO:root:/d9book/config
+INFO:root:/d9book/cron
+INFO:root:/d9book/dates
+INFO:root:/d9book/debugging
+INFO:root:/d9book/development
+INFO:root:/d9book/drush
+INFO:root:/d9book/email
+INFO:root:/d9book/entities
+INFO:root:/d9book/forms
+INFO:root:/d9book/general
+INFO:root:/d9book/off-island
+INFO:root:/d9book/hooks
+INFO:root:/d9book/learn
+INFO:root:/d9book/links
+INFO:root:/d9book/logging
+INFO:root:/d9book/menus
+INFO:root:/d9book/migrate
+INFO:root:/d9book/modals
+INFO:root:/d9book/nodes-and-fields
+INFO:root:/d9book/queries
+INFO:root:/d9book/redirects
+INFO:root:/d9book/render
+INFO:root:/d9book/routes
+INFO:root:/d9book/security
+INFO:root:/d9book/services
+INFO:root:/d9book/state
+INFO:root:/d9book/taxonomy
+INFO:root:/d9book/dtt
+INFO:root:/d9book/twig
+INFO:root:https://github.com/selwynpolit/d9book/fork
+INFO:root:Initializing a PDF merger.
+INFO:root:Success. Initialized a PDF merger.
+INFO:root:Downloading 37 webpages.
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/
+INFO:root:Fetching https://selwynpolit.github.io/d9book/.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/actions
+INFO:root:Fetching https://selwynpolit.github.io/d9book/actions.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/actions.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/attribution
+INFO:root:Fetching https://selwynpolit.github.io/d9book/attribution.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/attribution.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/bq
+INFO:root:Fetching https://selwynpolit.github.io/d9book/bq.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/bq.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/blocks
+INFO:root:Fetching https://selwynpolit.github.io/d9book/blocks.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/blocks.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/caching
+INFO:root:Fetching https://selwynpolit.github.io/d9book/caching.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/caching.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/composer
+INFO:root:Fetching https://selwynpolit.github.io/d9book/composer.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/composer.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/config
+INFO:root:Fetching https://selwynpolit.github.io/d9book/config.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/config.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/cron
+INFO:root:Fetching https://selwynpolit.github.io/d9book/cron.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/cron.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/dates
+INFO:root:Fetching https://selwynpolit.github.io/d9book/dates.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/dates.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/debugging
+INFO:root:Fetching https://selwynpolit.github.io/d9book/debugging.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/debugging.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/development
+INFO:root:Fetching https://selwynpolit.github.io/d9book/development.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/development.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/drush
+INFO:root:Fetching https://selwynpolit.github.io/d9book/drush.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/drush.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/email
+INFO:root:Fetching https://selwynpolit.github.io/d9book/email.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/email.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/entities
+INFO:root:Fetching https://selwynpolit.github.io/d9book/entities.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/entities.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/forms
+INFO:root:Fetching https://selwynpolit.github.io/d9book/forms.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/forms.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/general
+INFO:root:Fetching https://selwynpolit.github.io/d9book/general.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/general.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/off-island
+INFO:root:Fetching https://selwynpolit.github.io/d9book/off-island.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/off-island.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/hooks
+INFO:root:Fetching https://selwynpolit.github.io/d9book/hooks.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/hooks.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/learn
+INFO:root:Fetching https://selwynpolit.github.io/d9book/learn.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/learn.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/links
+INFO:root:Fetching https://selwynpolit.github.io/d9book/links.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/links.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/logging
+INFO:root:Fetching https://selwynpolit.github.io/d9book/logging.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/logging.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/menus
+INFO:root:Fetching https://selwynpolit.github.io/d9book/menus.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/menus.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/migrate
+INFO:root:Fetching https://selwynpolit.github.io/d9book/migrate.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/migrate.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/modals
+INFO:root:Fetching https://selwynpolit.github.io/d9book/modals.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/modals.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/nodes-and-fields
+INFO:root:Fetching https://selwynpolit.github.io/d9book/nodes-and-fields.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/nodes-and-fields.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/queries
+INFO:root:Fetching https://selwynpolit.github.io/d9book/queries.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/queries.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/redirects
+INFO:root:Fetching https://selwynpolit.github.io/d9book/redirects.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/redirects.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/render
+INFO:root:Fetching https://selwynpolit.github.io/d9book/render.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/render.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/routes
+INFO:root:Fetching https://selwynpolit.github.io/d9book/routes.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/routes.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/security
+INFO:root:Fetching https://selwynpolit.github.io/d9book/security.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/security.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/services
+INFO:root:Fetching https://selwynpolit.github.io/d9book/services.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/services.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/state
+INFO:root:Fetching https://selwynpolit.github.io/d9book/state.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/state.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/taxonomy
+INFO:root:Fetching https://selwynpolit.github.io/d9book/taxonomy.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/taxonomy.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/dtt
+INFO:root:Fetching https://selwynpolit.github.io/d9book/dtt.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/dtt.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/twig
+INFO:root:Fetching https://selwynpolit.github.io/d9book/twig.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/twig.
+INFO:root:=====================
+INFO:root:Created Access URL: https://github.com/selwynpolit/d9book/fork
+INFO:root:Fetching https://github.com/selwynpolit/d9book/fork.
+INFO:root:Success. Downloaded https://github.com/selwynpolit/d9book/fork.
+INFO:root:=====================
+INFO:root:Beginning conversion of main webpage to D9BOOK.pdf.
+INFO:root:Converting Rendered-PDF-2/D9BOOK.html to PDF.
+ERROR:root:An error occurred while converting Rendered-PDF-2/D9BOOK.html to PDF: No wkhtmltopdf executable found: "b''"
+If this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf
+INFO:root:Appending Rendered-PDF-2/D9BOOK.pdf to the master PDF file.
+INFO:root:Creating a new directory for the output files.
+INFO:root:Success. Created a new directory for the output files: Rendered-PDF-2.
+INFO:root:Fetching the main webpage.
+INFO:root:Success. Fetched the main webpage: https://selwynpolit.github.io/d9book/.
+INFO:root:Saving the main index webpage to a local file using wget.
+INFO:root:Success. Saved the main D9BOOK.html webpage to a local file: Rendered-PDF-2/D9BOOK.html.
+INFO:root:Found the following links:
+INFO:root:/d9book/
+INFO:root:/d9book/actions
+INFO:root:/d9book/attribution
+INFO:root:/d9book/bq
+INFO:root:/d9book/blocks
+INFO:root:/d9book/caching
+INFO:root:/d9book/composer
+INFO:root:/d9book/config
+INFO:root:/d9book/cron
+INFO:root:/d9book/dates
+INFO:root:/d9book/debugging
+INFO:root:/d9book/development
+INFO:root:/d9book/drush
+INFO:root:/d9book/email
+INFO:root:/d9book/entities
+INFO:root:/d9book/forms
+INFO:root:/d9book/general
+INFO:root:/d9book/off-island
+INFO:root:/d9book/hooks
+INFO:root:/d9book/learn
+INFO:root:/d9book/links
+INFO:root:/d9book/logging
+INFO:root:/d9book/menus
+INFO:root:/d9book/migrate
+INFO:root:/d9book/modals
+INFO:root:/d9book/nodes-and-fields
+INFO:root:/d9book/queries
+INFO:root:/d9book/redirects
+INFO:root:/d9book/render
+INFO:root:/d9book/routes
+INFO:root:/d9book/security
+INFO:root:/d9book/services
+INFO:root:/d9book/state
+INFO:root:/d9book/taxonomy
+INFO:root:/d9book/dtt
+INFO:root:/d9book/twig
+INFO:root:https://github.com/selwynpolit/d9book/fork
+INFO:root:Initializing a PDF merger.
+INFO:root:Success. Initialized a PDF merger.
+INFO:root:Downloading 37 webpages.
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/
+INFO:root:Fetching https://selwynpolit.github.io/d9book/.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/actions
+INFO:root:Fetching https://selwynpolit.github.io/d9book/actions.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/actions.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/attribution
+INFO:root:Fetching https://selwynpolit.github.io/d9book/attribution.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/attribution.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/bq
+INFO:root:Fetching https://selwynpolit.github.io/d9book/bq.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/bq.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/blocks
+INFO:root:Fetching https://selwynpolit.github.io/d9book/blocks.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/blocks.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/caching
+INFO:root:Fetching https://selwynpolit.github.io/d9book/caching.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/caching.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/composer
+INFO:root:Fetching https://selwynpolit.github.io/d9book/composer.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/composer.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/config
+INFO:root:Fetching https://selwynpolit.github.io/d9book/config.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/config.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/cron
+INFO:root:Fetching https://selwynpolit.github.io/d9book/cron.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/cron.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/dates
+INFO:root:Fetching https://selwynpolit.github.io/d9book/dates.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/dates.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/debugging
+INFO:root:Fetching https://selwynpolit.github.io/d9book/debugging.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/debugging.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/development
+INFO:root:Fetching https://selwynpolit.github.io/d9book/development.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/development.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/drush
+INFO:root:Fetching https://selwynpolit.github.io/d9book/drush.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/drush.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/email
+INFO:root:Fetching https://selwynpolit.github.io/d9book/email.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/email.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/entities
+INFO:root:Fetching https://selwynpolit.github.io/d9book/entities.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/entities.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/forms
+INFO:root:Fetching https://selwynpolit.github.io/d9book/forms.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/forms.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/general
+INFO:root:Fetching https://selwynpolit.github.io/d9book/general.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/general.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/off-island
+INFO:root:Fetching https://selwynpolit.github.io/d9book/off-island.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/off-island.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/hooks
+INFO:root:Fetching https://selwynpolit.github.io/d9book/hooks.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/hooks.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/learn
+INFO:root:Fetching https://selwynpolit.github.io/d9book/learn.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/learn.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/links
+INFO:root:Fetching https://selwynpolit.github.io/d9book/links.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/links.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/logging
+INFO:root:Fetching https://selwynpolit.github.io/d9book/logging.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/logging.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/menus
+INFO:root:Fetching https://selwynpolit.github.io/d9book/menus.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/menus.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/migrate
+INFO:root:Fetching https://selwynpolit.github.io/d9book/migrate.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/migrate.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/modals
+INFO:root:Fetching https://selwynpolit.github.io/d9book/modals.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/modals.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/nodes-and-fields
+INFO:root:Fetching https://selwynpolit.github.io/d9book/nodes-and-fields.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/nodes-and-fields.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/queries
+INFO:root:Fetching https://selwynpolit.github.io/d9book/queries.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/queries.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/redirects
+INFO:root:Fetching https://selwynpolit.github.io/d9book/redirects.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/redirects.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/render
+INFO:root:Fetching https://selwynpolit.github.io/d9book/render.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/render.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/routes
+INFO:root:Fetching https://selwynpolit.github.io/d9book/routes.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/routes.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/security
+INFO:root:Fetching https://selwynpolit.github.io/d9book/security.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/security.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/services
+INFO:root:Fetching https://selwynpolit.github.io/d9book/services.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/services.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/state
+INFO:root:Fetching https://selwynpolit.github.io/d9book/state.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/state.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/taxonomy
+INFO:root:Fetching https://selwynpolit.github.io/d9book/taxonomy.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/taxonomy.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/dtt
+INFO:root:Fetching https://selwynpolit.github.io/d9book/dtt.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/dtt.
+INFO:root:=====================
+INFO:root:Created Access URL: https://selwynpolit.github.io/d9book/twig
+INFO:root:Fetching https://selwynpolit.github.io/d9book/twig.
+INFO:root:Success. Downloaded https://selwynpolit.github.io/d9book/twig.
+INFO:root:=====================
+INFO:root:Created Access URL: https://github.com/selwynpolit/d9book/fork
+INFO:root:Fetching https://github.com/selwynpolit/d9book/fork.
+INFO:root:Success. Downloaded https://github.com/selwynpolit/d9book/fork.
+INFO:root:=====================
+INFO:root:Beginning conversion of main webpage to D9BOOK.pdf.
+INFO:root:Converting Rendered-PDF-2/D9BOOK.html to PDF.
+ERROR:root:An error occurred while converting Rendered-PDF-2/D9BOOK.html to PDF: wkhtmltopdf exited with non-zero code 127. error:
+/usr/local/bin/wkhtmltopdf: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory
+
+INFO:root:Appending Rendered-PDF-2/D9BOOK.pdf to the master PDF file.

@@ -20,6 +20,74 @@ It uses several Python libraries to achieve this:
 3. pdfkit: A Python wrapper for wkhtmltopdf, which allows HTML to PDF conversion using the webkit rendering engine and qt.
    Install it using pip: pip install pdfkit
    Note: You also need to install wkhtmltopdf in your system: https://wkhtmltopdf.org/downloads.html
+   
+   To install wkhtmltopdf, you can follow these steps:
+
+    1. Go to the wkhtmltopdf downloads page: https://wkhtmltopdf.org/downloads.html
+
+    2. Download the appropriate version for your operating system.
+        example: `wget https://wkhtmltopdf.org/0.12/0.12.6/wkhtmltox_0.12.6.1-2.jammy_amd64.deb`
+    3. Install the downloaded package.
+
+    4. Add the wkhtmltopdf executable to your system's PATH environment variable.
+
+    After installing wkhtmltopdf, you should be able to use it with the pdfkit Python
+    library to convert HTML to PDF.
+    
+    The command to add the wkhtmltopdf executable to the system's PATH environment variable depends on the operating system you are using. Here are the commands for some common operating systems:
+
+    **Windows:**
+
+    1. Open the Start menu and search for "Environment Variables".
+    2. Click on "Edit the system environment variables".
+    3. Click on the "Environment Variables" button.
+    4. Under "System Variables", scroll down and find the "Path" variable.
+    5. Click "Edit".
+    6. Click "New" and add the path to the directory containing the wkhtmltopdf executable (e.g. `C:\Program Files\wkhtmltopdf\bin`).
+    7. Click "OK" to close all the windows.
+
+    **macOS:**
+
+    1. Open Terminal.
+    2. Run the following command: `sudo nano /etc/paths`.
+    3. Enter your password if prompted.
+    4. Add the path to the directory containing the wkhtmltopdf executable (e.g. `/usr/local/bin`).
+    5. Press `Ctrl+X`, then `Y`, then `Enter` to save and exit.
+
+    **Linux:**
+
+    1. Open Terminal.
+    2. Run the following command: `sudo nano /etc/environment`.
+    3. Add the path to the directory containing the wkhtmltopdf executable (e.g. `/usr/local/bin`) to the end of the `PATH` variable.
+    4. Press `Ctrl+X`, then `Y`, then `Enter` to save and exit.
+    5. Run the following command to apply the changes: `source /etc/environment`.
+
+    To install a .deb file in WSL2 Ubuntu, you can follow these steps:
+
+    1. Open the terminal in WSL2 Ubuntu.
+
+    2. Navigate to the directory where the .deb file is located using the `cd` command.
+
+    3. Install the package using the `dpkg` command. For example, if the package is 
+       named `wkhtmltox_0.12.6.1-2.jammy_amd64.deb`, you can install it using the following command:
+
+    ```
+    sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+    ```
+
+   This will install the package and its dependencies.
+
+    4. If you encounter any errors related to missing dependencies, you can install
+       them using the `apt-get` command. For example, if the error message says that a package named `dependency` is missing, you can install it using the following command:
+
+    ```
+    sudo apt-get install dependency
+    ```
+
+    Once the missing dependencies are installed, you can try installing the .deb 
+    package again using the `dpkg` command.
+
+
 
 4. os: A built-in Python module that provides functions to interact with the operating system. No installation is needed.
 
