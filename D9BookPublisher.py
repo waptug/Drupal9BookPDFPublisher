@@ -30,6 +30,21 @@ It uses several Python libraries to achieve this:
 7. urllib.parse: A built-in Python module for parsing URLs.
 
 8. logging: A built-in Python module for logging application events.
+
+The program is divided into the following steps:
+step 1: Fetch the main webpage
+step 2: Parse the main webpage
+step 3: Find all links in the nav section
+step 4: Download each linked page
+step 5: Parse the downloaded webpage
+step 6: Replace relative URLs with absolute URLs
+step 7: Save the modified webpage
+step 8: Convert the main webpage to PDF
+step 9: Append the main PDF to the merger
+step 10: Convert each downloaded webpage to PDF
+step 11: Wrote the merged PDF to {os.path.join(output_dir, 'combined.pdf')}
+
+
 """
 
 import requests
