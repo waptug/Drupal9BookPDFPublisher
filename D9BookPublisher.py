@@ -4,6 +4,7 @@ Developer: Michael Scott McGinn
 Date: July 31, 2023
 Version: V1.0
 License: GPL3
+Clone this repo from https://github.com/waptug/Drupal9BookPDFPublisher.git
 
 This program fetches a main webpage from https://selwynpolit.github.io/d9book/ and all linked pages from the given URL, converts them to PDF, and merges them into a single PDF file.
 Orginal idea for the D9Book project goes out to https://selwynpolit.github.io/d9book/ and this program simply extends the benefits of a live Drupal resource.
@@ -43,8 +44,6 @@ step 8: Convert the main webpage to PDF
 step 9: Append the main PDF to the merger
 step 10: Convert each downloaded webpage to PDF
 step 11: Wrote the merged PDF to {os.path.join(output_dir, 'combined.pdf')}
-
-
 """
 
 import requests
