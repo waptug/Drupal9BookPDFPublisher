@@ -78,12 +78,16 @@ It uses several Python libraries to achieve this:
    This will install the package and its dependencies.
 
     4. If you encounter any errors related to missing dependencies, you can install
-       them using the `apt-get` command. For example, if the error message says that a package named `dependency` is missing, you can install it using the following command:
+       them using the `apt-get` command. For example, if the error message says that a 
+       package named `dependency` is missing, you can install it using the following command:
 
     ```
-    sudo apt-get install dependency
-    ```
+    sudo apt-get install dependency # If the above command fails, try this to install the
+                                      missing packages
 
+    sudo apt --fix-broken install  # If the above command fails, try this to remove the broken packages 
+
+    ```
     Once the missing dependencies are installed, you can try installing the .deb 
     package again using the `dpkg` command.
 
