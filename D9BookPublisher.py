@@ -129,6 +129,8 @@ import logging
 
 # Setup logging
 logging.basicConfig(filename='logfile.txt', level=logging.INFO)
+print("Starting program...")
+print("Logging initialized.")
 
 # Create a new directory for the output files
 logging.info("Creating a new directory for the output files.")
